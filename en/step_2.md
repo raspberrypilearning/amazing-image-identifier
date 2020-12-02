@@ -8,7 +8,7 @@ title: For Windows
 ---
 
 --- task ---
-Download the [starter zip file](http://rpf.io/image-identifier-go) and unzip it somewhere you'll remember on your computer. If you can't think of a location, just put it on your desktop. This isn't the best place to keep things in the long term, but it's fine when you're working on them.
+Download the [starter zip file](http://rpf.io/amazing-image-identifier-go) and unzip it somewhere you'll remember on your computer. If you can't think of a location, just put it on your desktop. This isn't the best place to keep things in the long term, but it's fine when you're working on them.
 --- /task ---
 
 Next, you need to install the libraries you'll use for this project. For this, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'command prompt' in Windows.

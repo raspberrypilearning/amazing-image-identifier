@@ -23,7 +23,7 @@ title: What you will need
 
 ### Downloads
 
-+ [rpf.io/image-identifier-go](http://rpf.io/image-identifier-go){:target="_blank"}
++ [rpf.io/amazing-image-identifier-go](http://rpf.io/amazing-image-identifier-go){:target="_blank"}
 
 --- /collapse ---
 
@@ -42,8 +42,8 @@ title: What you will learn
 title: Additional information for educators
 ---
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/image-identifier/print){:target="_blank"}.
+If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/amazing-image-identifier/print){:target="_blank"}.
 
-[Here is a link to the resources for this project](http://rpf.io/image-identifier-go).
+[Here is a link to the resources for this project](http://rpf.io/amazing-image-identifier-go).
 
 --- /collapse ---
