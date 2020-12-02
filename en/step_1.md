@@ -1,20 +1,12 @@
 ## Introduction
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+In this project, you'll create an application that will run on your computer. It will let you select a photograph of an everyday object, plant, or animal, and then provide some information about that thing. This could be used in a museum, to let visitors identify exhibits; it could be combined with a model specially trained on a city to let visitors identify buildings and landmarks; or really any other situation where a person might look at something and ask "What is that?".
 
 ### What you will make
 
---- no-print ---
-Add instructions for interacting with the embedded content here.
+You'll use an existing image classification model that has been trained to recognise many things. You will combine it with information from Wikipedia to tell users about the things in their photographs.
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
---- /no-print ---
-
---- print-only ---
-![Complete project](images/showcase_static.png)
---- /print-only ---
+![](images/finished_project.png)
 
 --- collapse ---
 ---
@@ -22,17 +14,16 @@ title: What you will need
 ---
 ### Hardware
 
-+ A computer or tablet capable of running Scratch 3
++ A computer with an internet connection
 
 ### Software
 
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
 + Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
++ The pip Python package installer (usually included with Python 3), and permission to install Python packages on your computer
 
 ### Downloads
 
-+ Download the project [starter file](http://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
++ [rpf.io/image-identifier-go](http://rpf.io/image-identifier-go){:target="_blank"}
 
 --- /collapse ---
 
@@ -41,9 +32,8 @@ title: What you will need
 title: What you will learn
 ---
 
-+ Learning objective 1
-+ Learning objective 2
-+ Learning objective 3
++ How to include machine learning models in a larger application
++ How to use library code and web services to achieve impressive results quickly
 
 --- /collapse ---
 
@@ -52,8 +42,8 @@ title: What you will learn
 title: Additional information for educators
 ---
 
-You can download the completed project [here](http://rpf.io/p/en/projectName-get){:target="_blank"}.
+If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/image-identifier/print){:target="_blank"}.
 
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/projectName/print){:target="_blank"}.
+[Here is a link to the resources for this project](http://rpf.io/image-identifier-go).
 
 --- /collapse ---
