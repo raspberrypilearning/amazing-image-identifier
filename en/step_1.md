@@ -44,6 +44,6 @@ title: Additional information for educators
 
 If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/amazing-image-identifier/print){:target="_blank"}.
 
-[Here is a link to the resources for this project](http://rpf.io/amazing-image-identifier-go).
+[Here is a link to the resources for this project](https://rpf.io/amazing-image-identifier-go).
 
 --- /collapse ---
