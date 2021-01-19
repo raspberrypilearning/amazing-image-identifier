@@ -32,7 +32,7 @@ def identify_image(image_path):
 
 --- /task ---
 
-To understand each step in this process, you can review [Testing your computer's vision](#), particularly the 'Load your model and image' and 'Use the model to predict an image' steps. In short: 
+To understand each step in this process, you can review [Testing your computer's vision](https://projects.raspberrypi.org/en/projects/testing-your-computers-vision), particularly the 'Load your model and image' and 'Use the model to predict an image' steps. In short: 
 
   * All the lines that start with `image` work to convert the image to the right format for the model.
   * The `prediction_result` line gets the model's prediction in the form of numbers that represent confidence in different guesses.
