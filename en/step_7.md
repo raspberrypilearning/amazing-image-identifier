@@ -14,7 +14,7 @@ from flask import Flask
 app = Flask(__name__)
 ```
 
-Flask applications use “routes” to define the URLs of the pages they create.
+Flask applications use **routes** to define the URLs of the pages they create.
 
 ```python
 @app.route(my_route)
@@ -57,24 +57,24 @@ Here’s an example of how you could include HTML in one of your route functions
 def index():
     return """
     <!doctype html>
-<head>    
-<title>Image identifier</title>
-</head>
-<body>
-<h1>Amazing image identifier!</h1>
-<p>This application will identify images and tell you about their contents. Simply upload an image to see how it works.</p>
-</body>
-"""
+    <head>    
+    <title>Image identifier</title>
+    </head>
+    <body>
+    <h1>Amazing image identifier!</h1>
+    <p>This application will identify images and tell you about their contents. Simply upload an image to see how it works.</p>
+    </body>
+    """
 ```
 
 #### Including variables in your page
 You can include Python variables in your HTML just as you can in any other string. For example:
 ```python
 f"""
-    <!doctype html>
-    <h1>{article.title}</h1>
-    <p>{article.summary}</p>
-    """
+<!doctype html>
+<h1>{article.title}</h1>
+<p>{article.summary}</p>
+"""
 ```
 --- /collapse ---
 
@@ -86,7 +86,7 @@ title: Letting users upload files
 In order to use your web app to classify images, users will need to be able to upload images to the app. To achieve this, you’ll need an upload form and a function that handles the upload.
 
 #### Creating a form
-This is the HTML for a simple form that will attempt to upload the supplied image through the POST method.
+This is the HTML for a short form that will attempt to upload the supplied image through the POST method.
 ```html
 <!doctype html>
    <h1>Upload new File</h1>

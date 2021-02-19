@@ -13,8 +13,11 @@ The code below shows how to create such an app, and make it appear with the `dis
 from guizero import App
 app = App()
 app.display()
-Giving your app a title
+```
+
+#### Giving your app a title
 You can give your app a title using the title property when creating it.
+```python
 from guizero import App
 app = App(title="My app")
 ```
@@ -24,12 +27,8 @@ from guizero import App
 app = App(title="My app")
 app.title = "New title"
 ```
---- /collapse ---
 
---- collapse ---
----
-title: Changing the size of your app
----
+#### Changing the size of your app
 Just like the title, you can set these properties at creation, or update them afterwards. They are integer values, and refer to the number of pixels in the width and height of the app.
 ```python
 from guizero import App
@@ -52,7 +51,7 @@ app.display()
 image_path = app.select_file()
 ```
 
-The select_file() function gives users a standard file picker for their operating system, and then returns the path to the file they select. 
+The `select_file()` function gives users a standard file picker for their operating system, and then returns the path to the file they select. 
 --- /collapse ---
 
 ### Adding widgets to your app
@@ -134,7 +133,8 @@ my_app  = App()
 my_image = Picture(my_app, image="pictures/my_picture.jpg")
 my_app.display()
 
-# After the app has loaded, get the location of a new image from the user
+# After the app has loaded, 
+# get the location of a new image from the user
 new_image_path = get_new_image_from_user()
 my_image.image = new_image_path
 ```
@@ -204,7 +204,12 @@ The code below shows you how to add multiple lines of text to an application usi
 ```python
 from guizero import TextBox
 
-my_text_box = TextBox(container, multiline=True, enabled=False, scrollbar=True, text=display_text)
+my_text_box = TextBox(container,
+                      multiline=True,
+                      enabled=False,
+                      scrollbar=True,
+                      text=display_text
+                      )
 ```
 
  + `container` is the widget you want to add the image inside of. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget.
@@ -219,7 +224,11 @@ Here’s an example of a simple application using the Text widget:
 from guizero import App, TextBox
 
 my_app  = App()
-my_text_box = TextBox(my_app, multiline=True, enabled=False, scrollbar=True, text="Hello World!")
+my_text_box = TextBox(my_app, 
+                      multiline=True, 
+                      enabled=False, 
+                      scrollbar=True, 
+                      text="Hello World!")
 my_app.display()
 ```
 
@@ -231,7 +240,12 @@ Of course, if you’re using a user-editable TextBox, then you don’t need to c
 ```python
 from guizero import TextBox
 
-my_text_box = TextBox(container, multiline=True, enabled=False, scrollbar=True, text=display_text)
+my_text_box = TextBox(container,
+                      multiline=True,
+                      enabled=False,
+                      scrollbar=True,
+                      text=display_text
+                      )
 my_text_box.enable()
 my_text_box.clear()
 my_text_box.append(new_display_text)
@@ -243,8 +257,13 @@ my_text_box.disable()
 Here’s an example of how you might update TextBox based on user input:
 ```python
 from guizero import App, TextBox
+
 my_app  = App()
-my_text_box = TextBox(my_app, multiline=True, enabled=False, scrollbar=True, text="Hello World!")
+my_text_box = TextBox(my_app, 
+                      multiline=True, 
+                      enabled=False, 
+                      scrollbar=True, 
+                      text="Hello World!")
 my_app.display()
 
 # After the app has loaded, get some new text from the user

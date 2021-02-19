@@ -48,7 +48,7 @@ parser.add_argument(argument_name,
                     help=argument_help,
                     type=value_type)
 ```
- + `argument_name` is a string that gives the name of the argument. This string also decides whether the argument is positional, or flagged, by whether it begins with a minus. For example “image_path” would be positional, while “-s” would be flagged.
+ + `argument_name` is a string that gives the name of the argument. This string also decides whether the argument is positional, or flagged, by whether it begins with a minus. For example `image_path` would be positional, while `-search` would be flagged.
  + `argument_help` is a string describing what the argument does, and the types of values it expects.
  + `value_type` is a Python data type. The parser treats arguments as strings by default. So, if you want to take in a string, you don’t need to include a type parameter. If you want to take in values of other types, you will need to specify the expected type here. There are a lot of these, but the ones you might need are:
     + `pathlib.Path` — the path to a file
@@ -65,7 +65,7 @@ parser.add_argument("image",
                     help="The image you want identified",
                     type=pathlib.Path)
 parser.add_argument("-s",
-                    help="The service you want to use to lookup the image")
+                    help="Where to lookup image details")
 ```
 --- /collapse ---
 
