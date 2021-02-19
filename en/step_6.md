@@ -1,52 +1,73 @@
-## Connect to Wikipedia
+## Build a command line tool
+A command line tool is a program that is intended to run in the command prompt, or terminal, of your computer. It accepts user inputs, does something with them, and produces outputs. In the case of this project, that could be a tool that identifies an image, or takes that identification and uses it to fetch information from the web, or do any other task you can think of.
 
-Now that you've got a prediction for the image, you need to connect to Wikipedia to get some information about that prediction to share with your users. Again, you can use a library for this, so the first thing you need to do is import that library:
+### Parsing arguments
+The only specialised piece of code you’ll need to write a command line tool is code to parse those arguments and make them accessible to your program.
 
---- task ---
+To parse arguments, Python uses the argparse library, which comes built-in to the language. While there is a lot you can do with this library, this project will only address a small number of the features that are likely to be of the most use to you. If you want, you can learn more about the library by reading [its documentation](https://docs.python.org/3/library/argparse.html).
 
-Go to the `import` statements at start of the `project.py` file and add this line:
+--- collapse ---
+---
+title: What are arguments?
+---
 
-```python
-import wikipedia as wiki
+Arguments are extra pieces of information that you pass to the program when you run it, like this:
+
+```bash
+python3 my_program.py images/my_image.png -s wikipedia
 ```
 
---- /task ---
+In this case, the program is being passed two arguments:
+ + `images/my_image.png` is a positional argument — the program knows what the argument is by where it is positioned in the list of arguments provided.
+ + `-s wikipedia` is a flagged argument. Flagged arguments always begin with a minus sign, followed by a text string, often a single letter. This lets the user identify which argument they are using. Then, if necessary, they can provide additional input to the argument — in this case `wikipedia`, instructing the program to search (which is where the `s` comes from) wikipedia for an entry about the classification result. Flagged arguments are, by convention, optional.
 
-Now you need to fetch the Wikipedia article that best matches your prediction.
+--- /collapse ---
 
---- task ---
+--- collapse ---
+---
+title: Creating an argument parser
+---
 
-In the `update_picture` function, just below where you get your model's prediction, add a line that uses the Wikipedia library to get the page information for the nearest match to your prediction and store it in a variable called `article`.
-
-```python
-article = wiki.page(prediction)
-```
-
-![A screenshot of the code, indicating where the new line should be added](images/add_article_location.png)
-
---- /task ---
-
-Right now, you're printing out the prediction to the CLI. To get the application to display information in a user-friendly way, it should update the user interface when it has gotten results from Wikipedia. To do this, change the title shown in the application to match the title of the Wikipedia article, and update the text to the summary text from the article — using a function that has been provided in the `project.py` file.
-
---- task ---
-
-Still working in the `update_picture` function, below the line where you create the `article` variable, add two lines to update the title and text box.
+To parse arguments, you will need to import and create an ArgumentParser, like so.
 
 ```python
-title.value = article.title
-update_text_box(article.summary)
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
 ```
+--- /collapse ---
 
---- /task ---
+--- collapse ---
+---
+title: Adding arguments to your program
+---
 
---- save ---
+Once it’s created, you will need to add each argument your program uses to the parser.
+```python
+parser.add_argument(argument_name,
+                    help=argument_help,
+                    type=value_type)
+```
+ + `argument_name` is a string that gives the name of the argument. This string also decides whether the argument is positional, or flagged, by whether it begins with a minus. For example “image_path” would be positional, while “-s” would be flagged.
+ + `argument_help` is a string describing what the argument does, and the types of values it expects.
+ + `value_type` is a Python data type. The parser treats arguments as strings by default. So, if you want to take in a string, you don’t need to include a type parameter. If you want to take in values of other types, you will need to specify the expected type here. There are a lot of these, but the ones you might need are:
+    + `pathlib.Path` — the path to a file
+    + `int` — an integer
+    + `float` — a floating point number (a number with a decimal point)
 
---- task ---
+Here’s an example of how you might create a parser and add some suitable arguments to it.
 
-Run the program again and try select some of the pictures included in the project's directory, to see what articles appear in the application.
+```python
+from argparse import ArgumentParser
 
-Try some other pictures from your computer, or the internet too. Since it works best with square images, you may want to use the [Google Advanced Image Search](https://www.google.com/advanced_image_search) tool and set the **aspect ratio** to 'Square'.
+parser = ArgumentParser()
+parser.add_argument("image",
+                    help="The image you want identified",
+                    type=pathlib.Path)
+parser.add_argument("-s",
+                    help="The service you want to use to lookup the image")
+```
+--- /collapse ---
 
-![The Google Advanced Image Search dialogue, with the aspect ratio set to 'Square'](images/advanced_image_search.png)
 
---- /task ---
+

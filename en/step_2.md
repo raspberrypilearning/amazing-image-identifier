@@ -1,6 +1,20 @@
-## Get the starter files
+## Get setup
 
-For this project, you'll use some starter code to set up the application, so you can focus on the machine learning part. First, you need to get that code and set it up. How you do this will vary based on your operating system.
+If you've never written Python on your computer before, you may need to install a programmer's text editor first.
+
+--- collapse ---
+---
+title: Click here if you need to install a programmer's text editor
+---
+There are lots of different programmer's text editors, and they are usually free, so most programmers try a few before finding their favourite. As you become more experienced, you should try different editors to see if there's one you enjoy using more than the others. For now, though, try one of the following:
+
+Use [Thonny](https://thonny.org/) if you do all your text-based programming in Python. It's got a lot of helpful features that work with Python to help you program correctly, and to investigate if your program isn't working as expected.
+
+If you use a few different languages — for example, if you create web pages with HTML and CSS as well as Python applications — then [Visual Studio Code](https://code.visualstudio.com/) is a good choice. It offers less help for any particular language, but supports a lot of different languages.
+
+--- /collapse ---
+
+For this project, you’ll also  need some library code. This is code written by other people and then provided to you so you don’t have to build all the parts of a program on your own. Python comes with a lot of libraries, but you’re going to need some extra ones. Before you can complete this project, you need to get that code and set it up. How you do this will vary based on your operating system.
 
 --- collapse ---
 ---
@@ -146,3 +160,5 @@ cd amazing_image_identifier
 --- /task ---
 
 --- /collapse ---
+
+While that’s installing — it can take quite some time depending on your internet connection — check out the “Get inspiration” section and start thinking about what you’re going to build.

@@ -1,12 +1,39 @@
 ## Introduction
 
-In this project, you'll create an application that will run on your computer. It will let you select a photograph of an everyday object, plant, or animal, and then provide some information about that thing. This could be used in a museum, to let visitors identify exhibits; it could be combined with a model specially trained on a city to let visitors identify buildings and landmarks; or really any other situation where a person might look at something and ask "What is that?".
+Create a product — a tool, app, or website — that uses machine vision to do something cool.
+
 
 ### What you will make
+You will use a pre-trained image classification model to build your product. You’ll combine this model with code for either:
+ + A web application, built with Flask
+ + A command-line tool
+ + A desktop application, built with guizero
 
-You'll use an existing image classification model that has been trained to recognise many things. You will combine it with information from Wikipedia to tell users about the things in their photographs.
+[[SCREENSHOT OF DEMOS GOES HERE]]
 
-![](images/finished_project.png)
+### What you should know
+To do this project, you should be familiar with:
+ + How to interact with a machine vision model, as covered in [Testing your computer’s vision](https://projects.raspberrypi.org/en/projects/testing-your-computers-vision)
+ + How to create and use variables, lists, conditional statements, and functions in Python
+
+
+--- collapse ---
+---
+title: Other skills that might be useful
+---
+
+
+It’s not necessary to have this knowledge, but it will help you achieve more complex, or visually impressive, results:
+#### For web projects
+If you’re going to build the web application, knowing how to code with HTML, CSS, and JavaScript will let you build a more sophisticated interface around the machine vision model. 
+ + The [Guide to my country](https://projects.raspberrypi.org/en/projects/cd-beginner-html-css-sushi) projects will show you how to create a website with HTML and CSS
+ + [Guess the colour](https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi) and [to-do list](https://projects.raspberrypi.org/en/projects/cd-intermediate-javascript-sushi) will show you how to use JavaScript to create more complex interactive websites
+ + Build a Python Web Server with Flask will show you how to take full advantage of Flask’s templates to include the information from your machine vision model in a web page
+
+#### For desktop projects
+On the other hand, if you want to build a desktop application, you can check out Getting started with GUIs to see the full variety of features and controls you can add to it.
+
+--- /collapse ---
 
 --- collapse ---
 ---
@@ -21,20 +48,6 @@ title: What you will need
 + Python 3
 + The pip Python package installer (usually included with Python 3), and permission to install Python packages on your computer
 
-### Downloads
-
-+ [rpf.io/amazing-image-identifier-go](http://rpf.io/amazing-image-identifier-go){:target="_blank"}
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
----
-
-+ How to include machine learning models in a larger application
-+ How to use library code and web services to achieve impressive results quickly
-
 --- /collapse ---
 
 --- collapse ---
@@ -43,7 +56,5 @@ title: Additional information for educators
 ---
 
 If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/amazing-image-identifier/print){:target="_blank"}.
-
-[Here is a link to the resources for this project](https://rpf.io/amazing-image-identifier-go).
 
 --- /collapse ---
