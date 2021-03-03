@@ -69,5 +69,37 @@ parser.add_argument("-s",
 ```
 --- /collapse ---
 
+--- collapse ---
+---
+title: Getting arguments from the parser
+---
+Once you have added all the arguments you need, you’ll need to read them and use them elsewhere in your program.
 
+First, you need to parse the arguments into a variable. You do this using the following code:
 
+```python
+args = parser.parse_args()
+```
++ `parser` is an argument parser you created
+
+Once you’ve done this, your variable contains an object which has properties that match each of the argument names you set. You can access these properties using the dot operator. For example, you would access a property called `image` like this:
+
+```python
+image = args.image
+```
+
+Here’s an example of how you can create an argument and fetch its value into a variable.
+
+```python
+from argparse import ArgumentParser
+
+parser = ArgumentParser()
+parser.add_argument("image",
+                    help="The image you want identified",
+                    type=pathlib.Path)
+
+args = parser.parse_args()
+
+image = args.image
+```
+--- /collapse ---
