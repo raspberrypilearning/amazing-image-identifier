@@ -9,7 +9,7 @@ You will use a pre-trained image classification model to build your product. You
  + A command-line tool
  + A desktop application, built with guizero
 
-[[SCREENSHOT OF DEMOS GOES HERE]]
+![An image of a desktop application, asking the user to provide an image for identification](images/initial_application.png)
 
 ### What you should know
 To do this project, you should be familiar with:
