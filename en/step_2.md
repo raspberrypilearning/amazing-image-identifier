@@ -69,73 +69,31 @@ pip install -r requirements.txt
 title: For macOS
 ---
 
-To install the libraries and other files you'll use in this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'terminal' in macOS.
+To install the libraries you'll use in this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'Terminal' in macOS. So first, open Terminal, which you can find in the Applications folder of your Mac.
 
-In the CLI, you don't access files by clicking to open them, or the directories (folders) they live in. You need to know the **path** to the file. It's like a set of directions, either from where you are currently located on the computer — called a **relative path** — or from the root of the computer's hard drive — called an **absolute** path. You'll need to find the path to the directory you've just unzipped for this next step.
-
-There are also some special paths, that are sorts of shortcuts in the system, and you will use one of them, called the **home directory**. Every user on a computer gets their own home directory to store their files, and it is accessed through a special character called the tilde (`~`).
-
---- task ---
-
-Open the CLI on your computer and type in the command below:
-
-```bash
-cd ~
-```
-Now press the Return key.
-
---- /task ---
-
-You are now located in your home directory, and can install the files needed for this project there. Because this can be a complex process, a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/proj-amaze), but be aware that it's written in a language called **bash script**, and won't look much like Python.
+Because installing libraries can be a complex process, a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/ml-test-scrip), but be aware that it's written in a language called **bash script**, and won't look much like Python.
 
 --- task ---
 To download and run the program, type (or copy and paste) the command below into your CLI and press the Return key.
 
 ```bash
-curl -L http://rpf.io/proj-amaze | sudo bash -s $USER
+sudo curl -L http://rpf.io/ml-test-scrip | sudo bash -s $USER
 ```
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. Once it has finished, you will have a new directory inside your home directory, called `amazing_image_identifier`. This is the directory you'll work in.
-
---- task ---
-
-To change directory to the `amazing_image_identifier` directory, type the following command into your CLI and press the Return key.
-
-```bash
-cd amazing_image_identifier
-```
-
---- /task ---
+The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. You will know the peofem has completed its work when you get a new line on which you can enter commands in your terminal. You'll then be ready to move on with the rest of the project.
 
 --- /collapse ---
-
-
 
 --- collapse ---
 ---
 title: For Linux (including Raspberry Pi)
 ---
 
-To install the libraries and other files you'll use in this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'terminal' in Linux.
+To install the libraries you'll use in this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'Terminal' in Linux.
 
-In the CLI, you don't access files by clicking to open them, or the directories (folders) they live in. You need to know the **path** to the file. It's like a set of directions, either from where you are currently located on the computer — called a **relative path** — or from the root of the computer's hard drive — called an **absolute** path. You need to find the path to the directory you've just unzipped for this next step.
-
-There are also some special paths, that are sorts of shortcuts in the system, and you'll use one of them, called the **home directory**. Every user on a computer gets their own home directory to store their files, and it is accessed using a special character called the tilde (`~`).
-
---- task ---
-
-Open the CLI on your computer and type the command below in:
-
-```bash
-cd ~
-```
-Now press the Return key.
-
---- /task ---
-
-You are now located in your home directory, and can install the files needed for this project there. Because this can be a complex process, a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/proj-amaze), but be aware that it's written in a language called **bash script**, and won't look much like Python.
+Because installing libraries can be a complex process, a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/proj-amaze), but be aware that it's written in a language called **bash script**, and won't look much like Python.
 
 --- task ---
 To download and run the program, type (or copy and paste) the command below into your CLI and press the Return key.
@@ -146,18 +104,8 @@ curl -L http://rpf.io/proj-amaze | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. Once it has finished, you will have a new directory inside your home directory, called `amazing_image_identifier`. This is the directory you'll work in.
-
---- task ---
-
-To change directory to the `amazing_image_identifier` directory, type the following command into your CLI and press the Return key.
-
-```bash
-cd amazing_image_identifier
-```
-
---- /task ---
+The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. You will know the peofem has completed its work when you get a new line on which you can enter commands in your terminal. You'll then be ready to move on with the rest of the project.
 
 --- /collapse ---
 
-While that’s installing — it can take quite some time depending on your internet connection — check out the “Get inspiration” section and start thinking about what you’re going to build.
+While the libraries are installing — it can take quite some time depending on your internet connection — check out the “Get inspiration” section and start thinking about what you’re going to build.
