@@ -1,6 +1,6 @@
 ## Build a desktop application
 
-Full documentation on using the guizero library, and all of the application components (which guizero calls widgets) it comes with, is [available on the guizero site](https://lawsie.github.io/guizero/start/), but a few of the most relevant have been included here for easy reference.
+Full documentation on using the guizero library, and all of the application components (which guizero calls widgets) it comes with, is [available on the guizero site](https://lawsie.github.io/guizero/start/), but a few of the most relevant ones have been included here for easy reference.
 
 --- collapse ---
 ---

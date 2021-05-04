@@ -11,6 +11,10 @@ You will use a pre-trained image classification model to build your product. You
 
 ![An image of a desktop application, asking the user to provide an image for identification](images/initial_application.png)
 
+### What you will learn
+ + How to connect a machine vision model into a larger Python program
+ + How to load a model made by someone else into your program
+
 ### What you should know
 To do this project, you should be familiar with:
  + How to interact with a machine vision model, as covered in [Testing your computer’s vision](https://projects.raspberrypi.org/en/projects/testing-your-computers-vision)

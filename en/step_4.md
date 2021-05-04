@@ -16,7 +16,7 @@ To use library code, you need to import it into your program, using import state
 from guizero import App, Button, Picture
 import tensorflow as tf
 ```
-Note that you can use extra keywords, like from to include only parts of a larger library (to load faster), or as to rename a library with a longer name, so you don’t have to keep typing it.
+Note that you can use extra keywords, like `from` to include only parts of a larger library (to load faster), or `as` to rename a library with a longer name, so you don’t have to keep typing it.
 
 Usually, programmers try to put all of their imports at the start of their program, and keep all imports from the same library on the same line, separated by commas.
 

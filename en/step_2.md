@@ -41,7 +41,7 @@ The easiest method is to open the folder in File Explorer, as you would normally
 
 --- task ---
 
-In the CLI, navigate to the directory you just unzipped by entering the following command — replace `[directory_path]` with the path to your directory.
+In the CLI, navigate to the directory you just unzipped by entering the following command — replace `[directory_path]` with the path to your directory. Then press the enter key to run the command.
 
 ```batch
 cd [directory_path]
@@ -82,7 +82,7 @@ sudo curl -L http://rpf.io/ml-test-scrip | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. You will know the peofem has completed its work when you get a new line on which you can enter commands in your terminal. You'll then be ready to move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. You will know the program has completed its work when you get a new line on which you can enter commands in your terminal. You'll then be ready to move on with the rest of the project.
 
 --- /collapse ---
 
@@ -104,7 +104,7 @@ curl -L http://rpf.io/proj-amaze | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. You will know the peofem has completed its work when you get a new line on which you can enter commands in your terminal. You'll then be ready to move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. You will know the program has completed its work when you get a new line on which you can enter commands in your terminal. You'll then be ready to move on with the rest of the project.
 
 --- /collapse ---
 

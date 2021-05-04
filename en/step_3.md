@@ -4,6 +4,4 @@ The model you’ll be using has been trained on the absolutely huge [ImageNet da
 
 Here are some examples of the kinds of web pages, apps, etc. you can create as part of this project:
 
-
-
-PENDING — Need to record some GIFs, and finish/improve a couple more demo project ideas.
+[[TODO — Add these]]

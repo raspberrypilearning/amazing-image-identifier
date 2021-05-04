@@ -16,5 +16,8 @@ steps:
   - title: Classify your image
   - title: Do something with the classifaction
   - title: Share
-  - title: Reflect
-
+  - title: Reflection
+    knowledge_quiz:
+      path: quiz1
+      questions: 3
+      passing_score: 3

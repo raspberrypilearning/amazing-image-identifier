@@ -43,6 +43,8 @@ def index():
 
 app.run(debug=True, host="0.0.0.0")
 ```
+
+Once you run this application, you will be able to access your website by entering `127.0.0.1:5000` into your browser's URL bar.
 --- /collapse ---
 
 --- collapse ---
@@ -142,10 +144,12 @@ You will also need to create a route and function that takes the uploaded image 
 from flask import Flask, url_for
 import os
 
+app.config["UPLOAD_FOLDER"] = "static/uploads"
+
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    image_path = os.path.join(UPLOAD_FOLDER, filename)
-    image_url = url_for('static', filename='uploads/' + filename)
+    image_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    image_url = url_for('static', filename=f"uploads/{filename}")
     return f"""
     <!doctype html>
     <img src='{image_url}' />

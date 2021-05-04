@@ -1,12 +1,13 @@
 ## Classify your image
-You need to load a model to do your image identification. While you could collect and label tens of thousands of images, design a model, and train it like in Teach a computer to read, that would take days of work. It’s much faster to use a model that has already been trained to identify a wide variety of things. Luckily, TensorFlow contains several such models, so you can just load one of them: VGG16.
+You need to load a model to do your image identification. Because you are creating an application that can identify most things it is shown, it needs a powerful and well trained model. While you could collect and label tens of thousands of images, design a model, and train it like in Teach a computer to read, that would take days of work. It’s much faster to use a model that has already been trained to identify a wide variety of things. Luckily, TensorFlow contains several such models, so you can just load one of them: VGG16.
 
 
 ### Importing a model from TensorFlow
-This code imports a model from TensorFlow and stores it in a model variable. It’s helpful to create a variable to store the image size the model expects at the same time, as you’ll need that later. For this version of VGG16 that’s 224x224 pixels.
+This code imports a model from TensorFlow and stores it in a model variable. It’s helpful to create a variable to store the image size the model expects at the same time, as you’ll need that later. For this version of VGG16 that’s 224x224 pixels. This means VGG16 expects square images. While the code for getting a classification below will resize any image it's given to match the model's expectations, if the image wasn't originally square it will end up a bit squished, which may confuse the model. Similarly, if the image provided is much bigger, or much smaller, than what the model expects then that may also cause issues. You may want to include guidance or instructions to your users on the kinds of image to supply. In a more advanced version of your application, you could even give them the tools to specifically choose a square section of their image to be classified.
 
 ```python
 import tensorflow as tf
+import numpy as np
 
 model = tf.keras.applications.VGG16()
 IMAGE_SIZE = 224
@@ -29,7 +30,7 @@ def identify_image(image_path):
     # Get the model's classifiaction of the image
     classifications = model.predict(image, batch_size=1)
     # Select the single most likely classifiaction 
-    best_classification = tf.keras.applications.imagenet_utils.decode_predictions(prediction_result, top=1)
+    best_classification = tf.keras.applications.imagenet_utils.decode_predictions(classifications, top=1)
     # Return the string that identifies that classification
     return best_classification[0][0][1]
 ```
