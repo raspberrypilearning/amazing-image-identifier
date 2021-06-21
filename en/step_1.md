@@ -27,7 +27,7 @@ title: Other skills that might be useful
 ---
 
 
-You do not need to have any other skills to complete this project. However, you might like to consider following the suggestions below if you want to create more complex, or visually impressive, results:
+You do not need to have any other skills to complete this project. However, you might like to consider the suggestions below if you want to create more complex, or visually impressive, results:
 #### For web projects
 If you’re going to build the web application, knowing how to code with HTML, CSS, and JavaScript will let you build a more sophisticated interface around the machine vision model. 
  + The [Guide to my country](https://projects.raspberrypi.org/en/projects/cd-beginner-html-css-sushi) project shows you how to create a website with HTML and CSS
