@@ -31,7 +31,7 @@ You do not need to have any other skills to complete this project. However, you 
 #### For web projects
 If you’re going to build the web application, knowing how to code with HTML, CSS, and JavaScript will let you build a more sophisticated interface around the machine vision model. 
  + The [Guide to my country](https://projects.raspberrypi.org/en/projects/cd-beginner-html-css-sushi) project shows you how to create a website with HTML and CSS
- + [Guess the colour!](https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi) and [To-do list](https://projects.raspberrypi.org/en/projects/cd-intermediate-javascript-sushi) both show you how to use JavaScript to create more complex interactive websites
+ + [Guess the colour!](https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi) and [To-do list](https://projects.raspberrypi.org/en/projects/cd-intermediate-javascript-sushi) both show you how to use JavaScript to create more complex, interactive websites
  + [Build a Python web server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) shows you how to take full advantage of Flask’s templates to include the information from your machine vision model in a web page
 
 #### For desktop projects
