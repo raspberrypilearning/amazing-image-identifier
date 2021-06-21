@@ -6,10 +6,10 @@ Create a product — a tool, app, or website — that uses machine vision to do 
 ### What you will make
 You will use a pre-trained image classification model to build your product. You’ll combine this model with code for either:
  + A web application, built with Flask
- + A command-line tool
+ + A command line tool
  + A desktop application, built with guizero
 
-![An image of a desktop application, asking the user to provide an image for identification](images/initial_application.png)
+![A desktop application that asks the user to provide an image for identification.](images/initial_application.png)
 
 ### What you will learn
  + How to connect a machine vision model into a larger Python program
@@ -27,15 +27,15 @@ title: Other skills that might be useful
 ---
 
 
-It’s not necessary to have this knowledge, but it will help you achieve more complex, or visually impressive, results:
+You do not need to have any other skills to complete this project. However, you might like to consider them if you want to create more complex, or visually impressive, results:
 #### For web projects
 If you’re going to build the web application, knowing how to code with HTML, CSS, and JavaScript will let you build a more sophisticated interface around the machine vision model. 
- + The [Guide to my country](https://projects.raspberrypi.org/en/projects/cd-beginner-html-css-sushi) projects will show you how to create a website with HTML and CSS
- + [Guess the colour](https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi) and [to-do list](https://projects.raspberrypi.org/en/projects/cd-intermediate-javascript-sushi) will show you how to use JavaScript to create more complex interactive websites
- + Build a Python Web Server with Flask will show you how to take full advantage of Flask’s templates to include the information from your machine vision model in a web page
+ + The [Guide to my country](https://projects.raspberrypi.org/en/projects/cd-beginner-html-css-sushi) project shows you how to create a website with HTML and CSS
+ + [Guess the colour!](https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi) and [To-do list](https://projects.raspberrypi.org/en/projects/cd-intermediate-javascript-sushi) both show you how to use JavaScript to create more complex interactive websites
+ + [Build a Python web server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) shows you how to take full advantage of Flask’s templates to include the information from your machine vision model in a web page
 
 #### For desktop projects
-On the other hand, if you want to build a desktop application, you can check out Getting started with GUIs to see the full variety of features and controls you can add to it.
+On the other hand, if you want to build a desktop application, you can check out [Getting started with GUIs](https://projects.raspberrypi.org/en/projects/getting-started-with-guis) to see the full variety of features and controls you can add to it.
 
 --- /collapse ---
 
