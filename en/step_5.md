@@ -196,7 +196,7 @@ my_text.value = new_display_text
 ---
 title: TextBox
 ---
-This widget is a box of text. It is useable both as a place for users to enter one or more lines of text, or as a way to display multiple lines of text. The examples below focus on how to display text, but you can refer to the details in the guizero documentation if you want to learn how to use it to allow users to enter text.
+This widget is a box of text. You can use it as a place for users to enter one or more lines of text, or as a way to display multiple lines of text. The examples below focus on how to display text, but you can refer to the details in the guizero documentation if you want to learn how to use it to allow users to enter text.
 
 #### Add a TextBox widget
 The code below shows you how to add multiple lines of text to an application using guizero’s TextBox widget.
