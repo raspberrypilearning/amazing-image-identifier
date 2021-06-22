@@ -108,4 +108,4 @@ The script may take several minutes, or more, to complete the setup, depending o
 
 --- /collapse ---
 
-While you wait for the libraries to install — it can take quite some time depending on your internet connection — check out the next step 'Get inspiration', to think about what you can build.
+While you wait for the libraries to install — it can take quite some time depending on your internet connection — check out the next step, 'Get inspiration', to think about what you can build.
