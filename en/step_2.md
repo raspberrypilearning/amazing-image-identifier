@@ -82,7 +82,7 @@ sudo curl -L http://rpf.io/ml-test-scrip | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. When program has completed its work, you will see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this is happening, it will display a lot of messages. You don't need to worry about reading those — they're mostly just the program telling you what it's doing. When the program has completed its work, you will see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
 
 --- /collapse ---
 
