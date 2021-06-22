@@ -88,7 +88,7 @@ The script may take several minutes, or more, to complete the setup, depending o
 
 --- collapse ---
 ---
-title: Linux (including Raspberry Pi)
+title: Linux (includes Raspberry Pi)
 ---
 
 To install the libraries for this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'Terminal' in Linux.
