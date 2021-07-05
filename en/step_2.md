@@ -6,7 +6,7 @@ If you've never written Python on your computer before, you may need to install 
 ---
 title: Install a programmer's text editor
 ---
-There are lots of different text editors; they are usually free, so most programmers try a few before they find their favourite editor. As you become more experienced, you should try different editors to see if you find one that you enjoy more than the others. For now, try one of the following:
+There are lots of different text editors; they are usually free, so most programmers try different editors before they find their favourite one. As you become more experienced, you should try different editors to see if you find one that you enjoy more than the others. For now, try one of the following:
 
 + If you do all your text-based programming in Python, use [Thonny](https://thonny.org/). It has a lot of helpful features that work with Python to help you program correctly, and to investigate if your program does not work as expected.
 
