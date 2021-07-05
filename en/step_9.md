@@ -1,4 +1,4 @@
-## Do something with the classifaction
+## Do something with the classification
 
 Once you have the image and have identified it using your machine vision model, you need to do something with it. Below are a few suggestions, but don’t just restrict yourself to these ideas — if you can think of something better, build it!
 
