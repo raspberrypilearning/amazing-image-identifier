@@ -16,9 +16,9 @@ You will use a pre-trained image classification model to build your product. You
  + How to load a model made by someone else into your program
 
 ### What you should know
-To do this project, you should be familiar with:
- + How to interact with a machine vision model, as covered in [Testing your computer’s vision](https://projects.raspberrypi.org/en/projects/testing-your-computers-vision)
- + How to create and use variables, lists, conditional statements, and functions in Python
+To complete this project, you should know how to:
+ + Interact with a machine vision model, as covered in [Testing your computer’s vision](https://projects.raspberrypi.org/en/projects/testing-your-computers-vision)
+ + Create and use variables, lists, conditional statements, and functions in Python
 
 
 --- collapse ---
@@ -29,13 +29,13 @@ title: Other skills that might be useful
 
 You do not need to have any other skills to complete this project. However, you might like to consider the suggestions below if you want to create more complex, or visually impressive, results:
 #### For web projects
-If you’re going to build the web application, knowing how to code with HTML, CSS, and JavaScript will let you build a more sophisticated interface around the machine vision model. 
+If you’re going to build the web application, knowing how to code with HTML, CSS, and JavaScript will let you build a sophisticated interface around the machine vision model. 
  + The [Guide to my country](https://projects.raspberrypi.org/en/projects/cd-beginner-html-css-sushi) project shows you how to create a website with HTML and CSS
  + [Guess the colour!](https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi) and [To-do list](https://projects.raspberrypi.org/en/projects/cd-intermediate-javascript-sushi) both show you how to use JavaScript to create more complex, interactive websites
  + [Build a Python web server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) shows you how to take full advantage of Flask’s templates to include the information from your machine vision model in a web page
 
 #### For desktop projects
-On the other hand, if you want to build a desktop application, you can check out [Getting started with GUIs](https://projects.raspberrypi.org/en/projects/getting-started-with-guis) to see the full variety of features and controls you can add to it.
+If you want to build a desktop application, you can check out [Getting started with GUIs](https://projects.raspberrypi.org/en/projects/getting-started-with-guis) to see the full variety of features and controls you can add to it.
 
 --- /collapse ---
 
