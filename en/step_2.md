@@ -31,17 +31,17 @@ Download the [requirements.txt file for this project](#) to somewhere memorable 
 
 To install the libraries for this project, and later to run the project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'command prompt' in Windows.
 
-In the CLI, you don't click to open and access files or the directories (folders) they live in. You need to know the **path** to the file. It's like a set of directions, either from where you are currently located on the computer — called a **relative path** — or from the root of the computer's hard drive — called an **absolute path**. You need to find the path to the directory that contains your `requirements.txt` file for this next step. If you saved it to your desktop, that is just a directory that the computer displays for you.
+In the CLI, you do not click to open and access files or the directories (folders) they live in. Instead, you need to know the **path** to the file. This is like a set of directions, either from where you are currently located on the computer — called a **relative path** — or from the root of the computer's hard drive — called an **absolute path**. You need to find the path to the directory that contains your `requirements.txt` file for this next step. If you saved it to your desktop, this is just a directory that the computer displays for you.
 
 #### How to find the path to a directory on Windows
 
 The easiest method is to open the folder in File Explorer and click into the navigation bar at the top of the window. The full path for the folder should become visible and you can then copy it.
 
-![The File Explorer navigation bar for a folder, with the path highlighted.](images/windows_path.png)
+![The File Explorer navigation bar for a folder, with the path highlighted in blue.](images/windows_path.png)
 
 --- task ---
 
-In the CLI, navigate to the directory you just unzipped by entering the following command — replace `[directory_path]` with the path to your directory. Then press the Enter key to run the command.
+In the CLI, navigate to the directory you just unzipped by entering the following command: replace `[directory_path]` with the path to your directory. Then press the Enter key to run the command.
 
 ```batch
 cd [directory_path]
@@ -53,7 +53,7 @@ Now that you have a CLI in the right directory, you can run Python commands with
 
 --- task ---
 
-Run this command on your CLI to install the libraries you need. It may take a while to run, as it will have to download the libraries from the internet and some of them are quite large.
+Run this command on your CLI to install the libraries you need. It may take a while to run, as it has to download the libraries from the internet and some of them are quite large.
 
 ```bash
 pip install -r requirements.txt 
@@ -69,9 +69,9 @@ pip install -r requirements.txt
 title: macOS
 ---
 
-To install the libraries for this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'Terminal' in macOS. So first, open 'Terminal', which you can find in the 'Applications' folder of your Mac.
+To install the libraries for this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'Terminal' in macOS. So your first step is to open 'Terminal', which you can find in the 'Applications' folder of your Mac.
 
-It can be a complex process to install librarie, so a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/ml-test-scrip), but be aware that it's written in a language called **Bash script** and won't look much like Python.
+It can be a complex process to install libraries, so a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/ml-test-scrip), but be aware that it's written in a language called **Bash script** and won't look much like Python.
 
 --- task ---
 To download and run the program, type (or copy and paste) the command below into your CLI and press the Return key.
@@ -82,7 +82,7 @@ sudo curl -L http://rpf.io/ml-test-scrip | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this happens, it will display a lot of messages. You don't need to worry about reading them — it is the program's way to tell you what it is doing. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, as this process depends on the speed of your computer and your internet connection. While this happens, lots of messages appear in the program. You don't need to worry about reading them — it is the program's way to tell you what it is doing. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
 
 --- /collapse ---
 
@@ -93,7 +93,7 @@ title: Linux (includes Raspberry Pi)
 
 To install the libraries for this project, you need to use the **command line interface** (CLI) — a program to control your computer by typing text commands into a window. The command line interface is called 'Terminal' in Linux.
 
-It can be a complex process to install librarie, so a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/proj-amaze), but be aware that it's written in a language called **Bash script** and won't look much like Python.
+It can be a complex process to install libraries, so a program to handle the installation for you has been created. Here are the [details of this program](http://rpf.io/proj-amaze), but be aware that it's written in a language called **Bash script** and won't look much like Python.
 
 --- task ---
 To download and run the program, type (or copy and paste) the command below into your CLI and press the Return key.
@@ -104,8 +104,8 @@ curl -L http://rpf.io/proj-amaze | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, depending on the speed of your computer and your internet connection. While this happens, it will display a lot of messages. You don't need to worry about reading them — it is the program's way to tell you what it is doing. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, as this process depends on the speed of your computer and your internet connection. While this happens, lots of messages appear in the program. You don't need to worry about reading them — it is the program's way to tell you what it is doing. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
 
 --- /collapse ---
 
-While you wait for the libraries to install — it can take quite some time depending on your internet connection — check out the next step, 'Get inspiration', to think about what you can build.
+While you wait for the libraries to install — it may take quite some time — check out the next step, 'Get inspiration', to think about what you can build.
