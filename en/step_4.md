@@ -11,7 +11,7 @@ You can pick one of these types of applications to build and decide what you wan
 #### How to use library code
 Libraries are collections of code written by other programmers. They have been packaged so you can install them easily and then include them in your own programs. Libraries that you may find useful for this project were installed when you ran the setup script.
 
-To use library code, you need to use an `import` statement to import it into your program, like this:
+To use library code, you need to use `import` statements to import it into your program, like this:
 ```python
 from guizero import App, Button, Picture
 import tensorflow as tf
