@@ -8,7 +8,7 @@ title: Install a programmer's text editor
 ---
 There are lots of different text editors; they are usually free, so most programmers try a few before they find their favourite editor. As you become more experienced, you should try different editors to see if you find one that you enjoy more than the others. For now, try one of the following:
 
-+ If you do all your text-based prgramming in Python, use [Thonny](https://thonny.org/). It has a lot of helpful features that work with Python to help you program correctly, and to investigate if your program does not work as expected.
++ If you do all your text-based programming in Python, use [Thonny](https://thonny.org/). It has a lot of helpful features that work with Python to help you program correctly, and to investigate if your program does not work as expected.
 
 + If you use a few different languages — for example, if you create web pages with HTML and CSS as well as Python applications — then [Visual Studio Code](https://code.visualstudio.com/) is a good choice. It offers less help for any particular language, but supports a lot of different languages.
 
