@@ -34,7 +34,7 @@ If you’ve built a web application, you can display the classification on a web
 ---
 title: Have the computer speak it
 ---
-With the `pyttsx3` libarary, you can use a few quick library commands to have the computer read out the classification, or any text you want. Think how useful that could be for someone who might have dificulty seeing an image!
+With the `pyttsx3` library, you can use a few quick library commands to have the computer read out the classification, or any text you want. Think how useful that could be for someone who might have difficulty seeing an image!
 
 ```python
 import pyttsx3
@@ -52,12 +52,12 @@ engine.runAndWait()
 --- /collapse --- 
 
 ### Get some more information about the classification
-Users might want to know more about the object in the image they've asked you program to identify for them. You can get them that information by searching Wikipedia for the classification your model returns. Conveniently, there is a Python library for doing exactly this! You can see below how to use it to fetch information on your classifiaction. You then need to combine this information with one of the forms of output to share it with your user.
+Users might want to know more about the object in the image they've asked you program to identify for them. You can get them that information by searching Wikipedia for the classification your model returns. Conveniently, there is a Python library for doing exactly this! You can see below how to use it to fetch information on your classification. You then need to combine this information with one of the forms of output to share it with your user.
 
 ```python
 import wikipedia as wiki
 
-article = wiki.page(classifiaction)
+article = wiki.page(classification)
 
 # At this point you could print out article, 
 # to see all of the data that you get back 
