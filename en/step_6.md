@@ -1,10 +1,10 @@
 ## Build a command line tool
-A command line tool is a program that is intended to run in the command prompt, or terminal, of your computer. It accepts user inputs, does something with them, and produces outputs. In the case of this project, that could be a tool that identifies an image, or takes that identification and uses it to fetch information from the web, or do any other task you can think of.
+A command line tool is a program that is intended to run in the command prompt, or terminal, of your computer. It accepts user inputs, does something with them, and produces outputs. In the case of this project, a command line tool could identify an image or take that identification and use it to fetch information from the web, or it could do any other task you like.
 
 ### Parsing arguments
-The only specialised piece of code you’ll need to write a command line tool is code to parse those arguments and make them accessible to your program.
+The only specialised piece of code needed to write a command line tool is code to parse those arguments and make them accessible to your program.
 
-To parse arguments, Python uses the argparse library, which comes built-in to the language. While there is a lot you can do with this library, this project will only address a small number of the features that are likely to be of the most use to you. If you want, you can learn more about the library by reading [its documentation](https://docs.python.org/3/library/argparse.html).
+To parse arguments, Python uses the argparse library, which is built in to the language. While there is a lot you can do with this library, this project only addresses a small number of the features that are likely to be of the most use to you. If you want to learn more about the library, you can read [its documentation](https://docs.python.org/3/library/argparse.html).
 
 --- collapse ---
 ---
@@ -17,18 +17,18 @@ Arguments are extra pieces of information that you pass to the program when you 
 python3 my_program.py images/my_image.png -s wikipedia
 ```
 
-In this case, the program is being passed two arguments:
- + `images/my_image.png` is a positional argument — the program knows what the argument is by where it is positioned in the list of arguments provided.
- + `-s wikipedia` is a flagged argument. Flagged arguments always begin with a minus sign, followed by a text string, often a single letter. This lets the user identify which argument they are using. Then, if necessary, they can provide additional input to the argument — in this case `wikipedia`, instructing the program to search (which is where the `s` comes from) wikipedia for an entry about the classification result. Flagged arguments are, by convention, optional.
+In this case, the program is passed two arguments:
+ + `images/my_image.png` is a positional argument. The program knows what the argument is by where it is positioned in the list of arguments provided.
+ + `-s wikipedia` is a flagged argument. Flagged arguments always begin with a minus sign, followed by a text string (often a single letter). This helps the user to identify the argument in use. Then, if necessary, the user can provide additional input to the argument to instruct the program to search, this is where the `s` comes from. In this case, the user instructs the program to search Wikipedia for an entry about the classification result. Flagged arguments are optional by convention.
 
 --- /collapse ---
 
 --- collapse ---
 ---
-title: Creating an argument parser
+title: Create an argument parser
 ---
 
-To parse arguments, you will need to import and create an ArgumentParser, like so.
+To parse arguments, you need to import and create an `ArgumentParser`, like this:
 
 ```python
 from argparse import ArgumentParser
@@ -39,23 +39,23 @@ parser = ArgumentParser()
 
 --- collapse ---
 ---
-title: Adding arguments to your program
+title: Add arguments to your program
 ---
 
-Once it’s created, you will need to add each argument your program uses to the parser.
+Once it is created, you need to add each argument used by your program to the parser.
 ```python
 parser.add_argument(argument_name,
                     help=argument_help,
                     type=value_type)
 ```
- + `argument_name` is a string that gives the name of the argument. This string also decides whether the argument is positional, or flagged, by whether it begins with a minus. For example `image_path` would be positional, while `-search` would be flagged.
- + `argument_help` is a string describing what the argument does, and the types of values it expects.
- + `value_type` is a Python data type. The parser treats arguments as strings by default. So, if you want to take in a string, you don’t need to include a type parameter. If you want to take in values of other types, you will need to specify the expected type here. There are a lot of these, but the ones you might need are:
+ + `argument_name` is a string that gives the name of the argument. This string also decides whether the argument is positional, or flagged, by whether it begins with a minus. For example, `image_path` would be positional, while `-search` would be flagged.
+ + `argument_help` is a string that describes what the argument does and the types of values it expects.
+ + `value_type` is a Python data type. The parser treats arguments as strings by default. So, if you want to take in a string, you do not need to include a type parameter. If you want to take in values of other types, you need to specify the expected type here. There are a lot of options, but the ones you might need are:
     + `pathlib.Path` — the path to a file
     + `int` — an integer
-    + `float` — a floating point number (a number with a decimal point)
+    + `float` — a floating-point number (a number with a decimal point)
 
-Here’s an example of how you might create a parser and add some suitable arguments to it.
+Below is an example of how you might create a parser and add some suitable arguments to it.
 
 ```python
 from argparse import ArgumentParser
@@ -71,24 +71,24 @@ parser.add_argument("-s",
 
 --- collapse ---
 ---
-title: Getting arguments from the parser
+title: Get arguments from the parser
 ---
-Once you have added all the arguments you need, you’ll need to read them and use them elsewhere in your program.
+Once you have added all the arguments you need, you should read them and use them elsewhere in your program.
 
-First, you need to parse the arguments into a variable. You do this using the following code:
+First, you need to parse the arguments into a variable. You can work on this with the code below:
 
 ```python
 args = parser.parse_args()
 ```
-+ `parser` is an argument parser you created
++ `parser` is an argument parser created by you
 
-Once you’ve done this, your variable contains an object which has properties that match each of the argument names you set. You can access these properties using the dot operator. For example, you would access a property called `image` like this:
+Once completed, your variable contains an object that has properties that match each of the argument names set by you. You can access these properties through the dot operator. For example, you would access a property called `image` like this:
 
 ```python
 image = args.image
 ```
 
-Here’s an example of how you can create an argument and fetch its value into a variable.
+Below is an example of how you can create an argument and fetch its value into a variable.
 
 ```python
 from argparse import ArgumentParser
