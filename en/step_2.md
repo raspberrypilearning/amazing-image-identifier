@@ -21,7 +21,7 @@ For this project, you also need some library code. This is code written by other
 title: Windows
 ---
 
-The command to install the libraries you need uses **pip**, a tool to fetch Python code written by other people from the internet and set up so you can use it in your projects. It is important to use pip to install libraries and not to just download them. This is because some libraries need other libraries to work (these libraries are called their **dependencies**) and pip automatically installs those too.
+The command to install the libraries you need uses `pip`, a tool to fetch Python code written by other people from the internet and set up so you can use it in your projects. It is important to use `pip` to install libraries and not to just download them. This is because some libraries need other libraries to work (these libraries are called their **dependencies**) and `pip` automatically installs those too.
 
 Conveniently, pip can be given a list of all the libraries a project needs, and told to install them all at once. These are usually included in a file called `requirements.txt`.
 
