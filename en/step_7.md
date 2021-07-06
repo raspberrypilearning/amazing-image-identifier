@@ -1,12 +1,12 @@
 ## Build a web application
-You can create a Python-powered web application using the Flask library. While the library is very powerful, what’s included here are just the pieces that are most likely to be useful to you in building and running your machine-vision powered application. If you’d like to learn more about Flask, check out either the [Build a Python Web Server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) project elsewhere on this site, or the [Flask documentation](https://flask.palletsprojects.com/).
+You can use the Flask library to create a Python-powered web application. While the library is very powerful, what’s included here are just the pieces that are most likely to be useful to you in building and running your machine-vision powered application. If you would like to learn more about Flask, check out our [Build a Python web server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) project or review the [Flask documentation](https://flask.palletsprojects.com/).
 
 --- collapse ---
 ---
-title: Creating an application
+title: Create an application
 ---
 
-The first thing you need to do in Flask is create an application. This only takes a couple of lines of code.
+First you need to create an application. This only takes a couple of lines of code.
 
 ```python
 from flask import Flask
@@ -22,16 +22,16 @@ def my_page():
     return page_content
 ```
 
- + `my_route` is a string, beginning with a forward slash (e.g. `/images`), that will serve as the end of the URL for your page. The start of the URL will be determined by your IP address, or domain name if you deploy the site on the web. Using a `/` with no additional text as the route will create the homepage for your site.
- + `page_content` is a string of text. This can include HTML, CSS, and JavaScript, as you’ll see below.
+ + `my_route` is a string that begins with a forward slash (for example, `/images`) and serves as the end of the URL for your page. The start of the URL is determined by your IP address, or domain name (if you deploy the site on the web). A `/` with no additional text as the route creates the home page for your site.
+ + `page_content` is a string of text. It can include HTML, CSS, and JavaScript, as you’ll see below.
 
-Once you’ve added a route to your application, you can add the run command at the end of the file, to cause Flask to start serving your website when the program is run.
+Once you’ve added a route to your application, you can add the `run` command to the end of the file to cause Flask to start serving your website when the program is run.
 
 ```python
 app.run(debug=True, host='0.0.0.0')
 ```
 
-Here is an example of a simple application that will run and serve a webpage.
+Here is an example of a simple application that will run and serve a web page.
 ```python
 from flask import Flask
 
@@ -44,16 +44,16 @@ def index():
 app.run(debug=True, host="0.0.0.0")
 ```
 
-Once you run this application, you will be able to access your website by entering `127.0.0.1:5000` into your browser's URL bar.
+Once you run this application, you can access your website. Simply enter `127.0.0.1:5000` into your browser's URL bar.
 --- /collapse ---
 
 --- collapse ---
 ---
-title: Serving a web page
+title: Serve a web page
 ---
-The response returned by your page functions can be more than a simple string of text. You can include HTML in the string, but be careful to avoid breaking the quotes around the string with quotes inside the HTML. Use single quotes in your HTML if you’re using double quotes in Python, or vice versa.
+The response returned by your page functions can be more than a simple string of text. You can include HTML in the string, but be careful to avoid breaking the quotes around the string with quotes inside the HTML. Use single quotes in your HTML if you have used double quotes in Python or vice versa.
 
-Here’s an example of how you could include HTML in one of your route functions.
+Here is an example of how you could include HTML in one of your route functions.
 ```python
 @app.route("/")
 def index():
@@ -69,7 +69,7 @@ def index():
     """
 ```
 
-#### Including variables in your page
+#### Include variables in your page
 You can include Python variables in your HTML just as you can in any other string. For example:
 ```python
 f"""
@@ -82,13 +82,13 @@ f"""
 
 --- collapse ---
 ---
-title: Letting users upload files
+title: Let users upload files
 ---
 
-In order to use your web app to classify images, users will need to be able to upload images to the app. To achieve this, you’ll need an upload form and a function that handles the upload.
+In order to use your web app to classify images, users need to be able to upload images to the app. To achieve this, you need an upload form and a function to handle the upload.
 
-#### Creating a form
-This is the HTML for a short form that will attempt to upload the supplied image through the POST method.
+#### Create a form
+This is the HTML for a short form that attempts to upload the supplied image through the POST method.
 ```html
 <!doctype html>
    <h1>Upload new File</h1>
@@ -99,10 +99,10 @@ This is the HTML for a short form that will attempt to upload the supplied image
 ```
 
 
-#### Handling the upload request & rerouting the user
-Once the form is submitted, it will attempt to use the same route that created the form to process it. To handle this, the function associated with that route needs to be expanded to handle a POST request, save the image it is sent as part of that request, and re-route the user to a page that will do something with the image.
+#### Handle the upload request and reroute the user
+Once the form is submitted, it attempts to use the same route that created the form to process it. To handle this, the function associated with that route needs to be expanded to handle a POST request, save the image it is sent as part of that request, and reroute the user to a page that does something with the image.
 
-You will also need to define an upload folder as part of creating the upload page. **Make sure that this folder exists, as Flask will not create it for you.**
+You also need to define an upload folder as part while you create the upload page. **Make sure that this folder exists, as Flask cannot create it for you.**
 
 ```python
 from flask import Flask, request, redirect, url_for
@@ -137,8 +137,8 @@ def upload_file():
             """
 ```
 
-#### Displaying the uploaded image
-You will also need to create a route and function that takes the uploaded image and does something with it. In the case of this project, that will involve classifying it, and maybe fetching some additional data based on that classification, e.g. from Wikipedia. The example below shows you how to display the image, but you can replace or extend that with whatever you do with the classification.
+#### Display the uploaded image
+You also need to create a route and function that takes the uploaded image and does something with it. In the case of this project, the program needs to classify it and maybe fetch some additional data based on that classification, for example, from Wikipedia. The example below shows you how to display the image, but you can replace or extend that with whatever you do with the classification.
 
 ```python
 from flask import Flask, url_for
@@ -158,24 +158,24 @@ def uploaded_file(filename):
 --- /collapse ---
 
 
-### Sharing your web app in a coding club
+### Share your web app in a coding club
 
-You can share your Flask web app with other computers on the same Wi-Fi or network. To do this, you will need to find your IP address, which you can do from the command line.
+You can share your Flask web app with other computers on the same WiFi or network. To do this, you need to find your IP address, which you can do from the command line.
 
 --- collapse ---
 ---
 title: What is an IP address?
 ---
-An IP address is a set of numbers that uniquely identify your computer on a network, and can be used to have one computer talk to another. An IP address is four sets of numbers, broken up by dots, like this: `192.168.86.229`.
+An IP address is a set of numbers that uniquely identifies your computer on a network and can be used to have one computer talk to another. An IP address is four sets of numbers, broken up by dots, like this: `192.168.86.229`.
 
 The whole internet works based on computers using IP addresses to talk to each other — IP actually stands for Internet Protocol. Domain names like raspberrypi.org are just used to look up the right IP address, although they are a lot easier for people to remember!
 
-The IP address you're using here is called your **private IP address**, because it only works inside your local network. The entire network usually shares a single IP address for connecting to other computers over the internet.
+The IP address you use for this project is called your **private IP address**, because it only works inside your local network. The entire network usually shares a single IP address for connecting to other computers over the internet.
 --- /collapse ---
 
 --- collapse ---
 ---
-title: Finding your IP address on Windows
+title: Find your IP address on Windows
 ---
 In your command prompt, run this command:
 
@@ -183,12 +183,12 @@ In your command prompt, run this command:
 ipconfig
 ```
 
-You will get a lot of information back, but just find the line that begins with `IPv4 Address` — the number on that line is what you need.
+You should get a lot of information back, but just find the line that begins with `IPv4 Address` — the number on that line is what you need.
 --- /collapse ---
 
 --- collapse ---
 ---
-title: Finding your IP address on Mac OS
+title: Find your IP address on macOS
 ---
 In your terminal, run this command:
 
@@ -201,7 +201,7 @@ The response is your IP address.
 
 --- collapse ---
 ---
-title: Finding your IP address on Linux (including Raspberry Pi)
+title: Find your IP address on Linux (includes Raspberry Pi)
 ---
 In your terminal, run this command:
 
@@ -214,8 +214,8 @@ The response is your IP address.
 
 --- collapse ---
 ---
-title:  Sharing your app
+title:  Share your app
 ---
-Once you have your IP address, all other people on your network need to do is open their web browser and type your IP address followed by `:5000` into the address bar. For example `192.168.86.229:5000` would work for a computer with that IP address.
+Once you have your IP address, all other people on your network need to do is open their web browser and type your IP address followed by `:5000` into the address bar. For example, `192.168.86.229:5000` would work for a computer with that IP address.
 
 --- /collapse ---
