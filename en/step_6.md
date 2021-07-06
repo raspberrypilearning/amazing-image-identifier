@@ -4,7 +4,7 @@ A command line tool is a program that is intended to run in the command prompt, 
 ### Parsing arguments
 The only specialised piece of code needed to write a command line tool is code to parse those arguments and make them accessible to your program.
 
-To parse arguments, Python uses the argparse library, which is built into the language. While there is a lot you can do with this library, this project only addresses a small number of the features that are likely to be of the most use to you. If you want to learn more about the library, you can read [its documentation](https://docs.python.org/3/library/argparse.html).
+To parse arguments, Python uses the `argparse` library, which is built into the language. While there is a lot you can do with this library, this project only addresses a small number of the features that are likely to be of the most use to you. If you want to learn more about the library, you can read [its documentation](https://docs.python.org/3/library/argparse.html).
 
 --- collapse ---
 ---
