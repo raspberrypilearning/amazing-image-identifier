@@ -235,7 +235,7 @@ my_app.display()
 #### Update a `TextBox` widget
 To update a `TextBox` widget, you need to make it modifiable, empty it, add new contents, and then make it unmodifiable again. 
 
-Of course, if you use a user-editable `TextBox`, then you don’t need to change the enabled property at all (it will already be modifiable).
+Of course, if you use a user-editable text box, then you don’t need to change the enabled property at all (it will already be modifiable).
 
 ```python
 from guizero import TextBox
