@@ -38,7 +38,7 @@ In the screen that appears, you need to give your repository a name. You can als
 
 ![The GitHub repository creation form.](images/github_project_creation.png)
 
-For now, leave the repository set to public. Don't worry about any of the three checkboxes, just click the **Create repository** button. 
+For now, leave the repository set to 'public'. Don't worry about any of the three checkboxes, just click the **Create repository** button. 
 --- /collapse ---
 
 --- collapse ---
@@ -50,7 +50,7 @@ Once the repository has been created, you should be shown a number of options on
 
 ![The 'Quick setup' section, with the 'uploading an existing file' link highlighted.](images/github_upload_link.png)
 
-Then you should be presented with a screen that gives you options to createa a commit. Drag any files that form part of your project into the repository and then give the commit a name. Remember to think carefully about what you put on the web. Since you can commit new versions of files later, the name of the commit helps you remember when you last changed a particular file. Since this is the very first commit of the project, you can pick a simple name like 'Version 1' or 'First commit'. You also have the option to add a more detailed description of the commit.
+Then you should be presented with a screen that gives you options to create a commit. Drag any files that form part of your project into the repository and then give the commit a name. Remember to think carefully about what you put on the web. Since you can commit new versions of files later, the name of the commit helps you remember when you last changed a particular file. Since this is the very first commit of the project, you can pick a simple name like 'Version 1' or 'First commit'. You also have the option to add a more detailed description of the commit.
 
 ![The form for creating a commit.](images/github_commit.png)
 
@@ -71,7 +71,7 @@ On the GitHub page for your repository (which you can find on the left-hand side
 
 ![The 'Add file' menu.](images/github_add_file.png)
 
-You will then be presented with a screen that gives you options to createa a commit. Drag any files that form part of your project into the repository and then give the commit a name. Again, remember to be careful about what you put on the web. Don't worry about whether or not you've changed a file, GitHub can figure that out for you.
+You will then be presented with a screen that gives you options to create a commit. Drag any files that form part of your project into the repository and then give the commit a name. Again, remember to be careful about what you put on the web. Don't worry about whether or not you've changed a file, GitHub can figure that out for you.
 
 ![The form to create a commit.](images/github_commit.png)
 
