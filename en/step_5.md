@@ -29,7 +29,7 @@ app.title = "New title"
 ```
 
 #### Change the size of your app
-Just like the title, you can set these properties at creation, or update them afterwards. They are integer values; they refer to the number of pixels in the width and height of the app.
+Just like the title, you can set these properties at creation, or update them afterwards. They are integer values, which means that they refer to the number of pixels in the width and height of the app.
 ```python
 from guizero import App
 app = App(height=300, width=200)
@@ -42,7 +42,7 @@ app.display()
 ---
 title: Get an image from users
 ---
-To classify an image, your app needs to have the path to an image file. In guizero there is a built-in file picker.
+To classify an image, your app needs to have the path to an image file. In guizero, there is a built-in file picker.
 
 ```python
 from guizero import App
@@ -51,21 +51,21 @@ app.display()
 image_path = app.select_file()
 ```
 
-The `select_file()` function gives users a standard file picker for their operating system, and then returns the path to the file they select. 
+The `select_file()` function gives users a standard file picker for their operating system and then returns the path to the file they select. 
 --- /collapse ---
 
 ### Add widgets to your app
-The following is a collection of widgets you might want to use in your app. Note that you must add the widgets before calling the `display()` function.
+Below is a collection of widgets you might want to use in your app. Note that you must add the widgets before you call the `display()` function.
 
 --- collapse ---
 ---
 title: PushButton
 ---
-This widget creates a button that users can click. The button can be connected to a function, to trigger behaviour in response to user actions.
+This widget creates a button that users can click. The button can be connected to a function to trigger behaviour in response to user actions.
 
-#### Add a PushButton widget
+#### Add a `PushButton` widget
 
-The code below shows you how to add a button to an application using guizero’s PushButton widget.
+The code below shows you how to use guizero's `PushButton` widget to add a button to an application. 
 ```python
 from guizero import PushButton
 my_button = PushButton(container, command=my_function)
@@ -73,7 +73,7 @@ my_button = PushButton(container, command=my_function)
  + `container` is the widget you want to add the image inside of. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget.
  + `my_function` is the name of a function elsewhere in your program that does something you want to happen when the button is clicked.
 
-Here is an example of a simple application that uses the PushButton widget:
+Below is an example of a simple application that uses the `PushButton` widget.
 
 ```python
 from guizero import App, PushButton
@@ -94,8 +94,8 @@ title: Picture
 ---
 This widget displays an image in the .png, .gif, or .jpg file format.
 
-#### Add a Picture widget
-The code below shows you how to add an image to an application using guizero’s Picture widget.
+#### Add a `Picture` widget
+The code below shows you how to add an image to an application using guizero’s `Picture` widget.
 ```python
 from guizero import Picture
 
@@ -105,7 +105,7 @@ my_image = Picture(container, image=image_path)
  + `container` is the widget you want to add the image inside of. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget.
  + `image_path` is a string that gives the path to your image.
 
-Here’s an example of a simple application that uses the Picture widget:
+Below is an example of a simple application that uses the `Picture` widget.
 ```python
 from guizero import App, Picture
 my_app  = App()
@@ -113,8 +113,8 @@ my_image = Picture(my_app, image="pictures/my_picture.jpg")
 my_app.display()
 ```
 
-#### Update a Picture widget
-You can update an image in your application by modifying its image property, as shown:
+#### Update a `Picture` widget
+To update an image in your application, you can modify its image property.
 ```python
 from guizero import Picture
 
@@ -124,7 +124,7 @@ my_image.image = new_image_path
 
  + `new_image_path` is a string that gives the path to the image you want to update to.
 
-Here’s an example of how you might update an image based on user input:
+Below is an example of how you might update an image based on user input.
 
 ```python
 from guizero import App, Picture
@@ -144,10 +144,10 @@ my_image.image = new_image_path
 ---
 title: Text
 ---
-This widget displays a single line of text. If you want to display multiple lines of text, look at the Text box widget, below.
+This widget displays a single line of text. If you want to display multiple lines of text, look at the `Textbox` widget below.
 
-#### Add a Text widget
-The code below shows you how to add a line of text to an application using guizero’s Text widget.
+#### Add a `Text` widget
+The code below shows you how to add a line of text to an application using guizero’s `Text` widget.
 ```python
 from guizero import Text
 
@@ -157,7 +157,7 @@ my_text = Text(container, text=display_text)
  + `display_text` is a string that gives the text to display.
 
 
-Here’s an example of a simple application that uses the Text widget:
+Below is an example of a simple application that uses the `Text` widget.
 ```python
 from guizero import App, Text
 
@@ -166,8 +166,8 @@ my_text = Text(my_app, text=“Hello World!”)
 my_app.display()
 ```
 
-#### Update a Text widget
-To update a Text widget in your application, you can modify its value property.
+#### Update a `Text` widget
+To update a `Text` widget in your application, you can modify its value property.
 
 ```python
 from guizero import Text
@@ -178,7 +178,7 @@ my_text.value = new_display_text
  + `new_display_text` is a string that gives the new text to display.
 
 
-Here’s an example of how you might update Text based on user input:
+Below is an example of how you might update text based on user input.
 ```python
 from guizero import App, Text
 
@@ -198,8 +198,8 @@ title: TextBox
 ---
 This widget is a box of text. You can use it as a place for users to enter one or more lines of text, or as a way to display multiple lines of text. The examples below focus on how to display text, but you can refer to the details in the guizero documentation if you want to learn how to use it to allow users to enter text.
 
-#### Add a TextBox widget
-The code below shows you how to add multiple lines of text to an application using guizero’s TextBox widget.
+#### Add a `TextBox` widget
+The code below shows you how to add multiple lines of text to an application using guizero’s `TextBox` widget.
 
 ```python
 from guizero import TextBox
@@ -212,13 +212,13 @@ my_text_box = TextBox(container,
                       )
 ```
 
- + `container` is the widget you want to add the image inside of. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget
- + The `multiline` property tells the TextBox whether or not to display multiple lines of text
- + The `enabled` property tells the TextBox whether or not its content can be modified
- + The `scrollbar` property tells the TextBox whether or not to display a scrollbar
- + `display_text` is a string that gives the text to display
+ + `container` is the widget you want to add the image inside of. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget.
+ + The `multiline` property tells the `TextBox` whether or not to display multiple lines of text.
+ + The `enabled` property tells the `TextBox` whether or not its content can be modified.
+ + The `scrollbar` property tells the `TextBox` whether or not to display a scrollbar.
+ + `display_text` is a string that gives the text to display.
 
-Here’s an example of a simple application that uses the Text widget:
+Below is an example of a simple application that uses the `TextBox` widget.
 
 ```python
 from guizero import App, TextBox
@@ -232,10 +232,10 @@ my_text_box = TextBox(my_app,
 my_app.display()
 ```
 
-#### Update a TextBox widget
-To update a TextBox widget, you need to make it modifiable, empty it, add new contents, and then make it unmodifiable again. 
+#### Update a `TextBox` widget
+To update a `TextBox` widget, you need to make it modifiable, empty it, add new contents, and then make it unmodifiable again. 
 
-Of course, if you use a user-editable TextBox, then you don’t need to change the enabled property at all (it will already be modifiable).
+Of course, if you use a user-editable `TextBox`, then you don’t need to change the enabled property at all (it will already be modifiable).
 
 ```python
 from guizero import TextBox
@@ -254,7 +254,7 @@ my_text_box.disable()
  + `new_display_text` is a string that gives the new text to display.
 
 
-Here’s an example of how you might update TextBox based on user input:
+Below is an example of how you might update the text box based on user input.
 ```python
 from guizero import App, TextBox
 
