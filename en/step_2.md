@@ -41,7 +41,7 @@ The easiest method is to open the folder in File Explorer and click into the nav
 
 --- task ---
 
-In the CLI, navigate to the directory you just unzipped by entering the following command: replace `[directory_path]` with the path to your directory. Then press the Enter key to run the command.
+In the CLI, navigate to the directory you just unzipped by entering the following command — replace `[directory_path]` with the path to your directory. Then press the Enter key to run the command.
 
 ```batch
 cd [directory_path]
