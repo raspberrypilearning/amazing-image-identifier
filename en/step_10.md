@@ -52,7 +52,7 @@ Once the repository has been created, you should be shown a number of options on
 
 Then you should be presented with a screen that gives you options to create a commit. Drag any files that form part of your project into the repository and then give the commit a name. Remember to think carefully about what you put on the web. Since you can commit new versions of files later, the name of the commit helps you remember when you last changed a particular file. Since this is the very first commit of the project, you can pick a simple name like 'Version 1' or 'First commit'. You also have the option to add a more detailed description of the commit.
 
-![The form for creating a commit.](images/github_commit.png)
+![The form to create a commit.](images/github_commit.png)
 
 Then click the **Commit changes** button to save your commit!
 
