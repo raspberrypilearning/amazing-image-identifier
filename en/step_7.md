@@ -1,5 +1,5 @@
 ## Build a web application
-You can use the Flask library to create a Python-powered web application. While the library is very powerful, what’s included here are just the pieces that are most likely to be useful to you in building and running your machine-vision powered application. If you would like to learn more about Flask, check out our ['Build a Python web server with Flask'](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) project or review the [Flask documentation](https://flask.palletsprojects.com/).
+You can use the Flask library to create a Python-powered web application. This library has lots of functions, so we have included helpful tips while you build and run your machine-vision powered application. If you would like to learn more about Flask, check out our ['Build a Python web server with Flask'](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) project or review the [Flask documentation](https://flask.palletsprojects.com/).
 
 --- collapse ---
 ---
