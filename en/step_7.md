@@ -25,7 +25,7 @@ def my_page():
  + `my_route` is a string that begins with a forward slash (for example, `/images`) and serves as the end of the URL for your page. The start of the URL is determined by your IP address, or domain name (if you deploy the site on the web). A `/` with no additional text as the route creates the home page for your site.
  + `page_content` is a string of text. It can include HTML, CSS, and JavaScript, as you’ll see below.
 
-Once you’ve added a route to your application, you can add the `run` command to the end of the file to cause Flask to start serving your website when the program is run.
+Once you’ve added a route to your application, you can add the `run` command to the end of the file to cause Flask to start to serve your website when the program is run.
 
 ```python
 app.run(debug=True, host='0.0.0.0')
@@ -85,7 +85,7 @@ f"""
 title: Let users upload files
 ---
 
-In order to use your web app to classify images, users need to be able to upload images to the app. To achieve this, you need an upload form and a function to handle the upload.
+In order to use your web app to classify images, users need to be able to upload images to the app. To achieve this, you need an upload form and a function to handle the uploaded content.
 
 #### Create a form
 This is the HTML for a short form that attempts to upload the supplied image through the POST method.
