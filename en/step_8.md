@@ -3,7 +3,7 @@ You need to load a model to do your image identification. In order to create an 
 
 
 ### Import a model from TensorFlow
-This code imports a model from TensorFlow and stores it in a model variable. It is helpful to create a variable to store the image in the size the model expects at the same time, as you need thhis information later. For this version of VGG16, that is 224x224 pixels. This means VGG16 expects square images. The code to get a classification below resizes any image it is given to match the model's expectations. If the image wasn't originally square, it will end up a bit squished, which may confuse the model. Similarly, if the image provided is much bigger, or much smaller, than what the model expects, then that may also cause issues. You may want to include guidance or instructions to your users on the types of image to supply. In a more advanced version of your application, you could give them the tools to specifically choose a square section of their image to be classified.
+This code imports a model from TensorFlow and stores it in a model variable. It is helpful to create a variable to store the image in the size the model expects at the same time, as you need this information later. For this version of VGG16, that is 224x224 pixels. This means VGG16 expects square images. The code to get a classification below resizes any image it is given to match the model's expectations. If the image wasn't originally square, it will end up a bit squished, which may confuse the model. Similarly, if the image provided is much bigger, or much smaller, than what the model expects, then that may also cause issues. You may want to include guidance or instructions to your users on the types of image to supply. In a more advanced version of your application, you could give them the tools to specifically choose a square section of their image to be classified.
 
 ```python
 import tensorflow as tf
@@ -27,9 +27,9 @@ def identify_image(image_path):
     # and shape that array as the model expects
     image = tf.keras.preprocessing.image.img_to_array(image)
     image = np.expand_dims(image, axis=0)
-    # Get the model's classifiaction of the image
+    # Get the model's classification of the image
     classifications = model.predict(image, batch_size=1)
-    # Select the single most likely classifiaction 
+    # Select the single most likely classification 
     best_classification = tf.keras.applications.imagenet_utils.decode_predictions(classifications, top=1)
     # Return the string that identifies that classification
     return best_classification[0][0][1]
