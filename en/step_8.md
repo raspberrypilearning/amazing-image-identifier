@@ -1,5 +1,5 @@
 ## Classify your image
-You need to load a model to do your image identification. In order to create an application that can identify most things it is shown, a powerful and well-trained model is needed. You could collect and label tens of thousands of images, design a model, and train it like in the 'Teach a computer to read' project, but it would take days of work. It is much faster to use a model that has already been trained to identify a wide variety of things. Luckily, TensorFlow contains several models suited for this purpose, so you can just load one of them: VGG16.
+You need to load a model to do your image identification. In order to create an application that can identify most things it is shown, a powerful and well-trained model is needed. You could collect and label tens of thousands of images, design a model, and train it like in the 'Teach a computer to read' project, but it would take days of work. It is much faster to use a model that has already been trained to identify a wide variety of things. Luckily, TensorFlow contains several models suited for this purpose, so you can just load one of them. This project uses the VGG16 model as an example.
 
 
 ### Import a model from TensorFlow
