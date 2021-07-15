@@ -102,7 +102,7 @@ This is the HTML for a short form that attempts to upload the supplied image thr
 #### Handle the upload request and reroute the user
 Once the form is submitted, it attempts to use the same route that created the form to process it. To handle this, the function associated with that route needs to be expanded to handle a POST request, save the image it is sent as part of that request, and reroute the user to a page that does something with the image.
 
-You also need to define an upload folder as part while you create the upload page. **Make sure that this folder exists, as Flask cannot create it for you.**
+You also need to define an upload folder while you create the upload page. **Make sure that this folder exists, as Flask cannot create it for you.**
 
 ```python
 from flask import Flask, request, redirect, url_for
