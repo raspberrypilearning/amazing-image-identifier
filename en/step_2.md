@@ -82,7 +82,7 @@ sudo curl -L http://rpf.io/ml-test-scrip | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, as this process depends on the speed of your computer and your internet connection. While this happens, lots of messages appear in the program. You don't need to worry about reading them — it is the program's way to tell you what it is doing. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, as this process depends on the speed of your computer and your internet connection. While this happens, lots of messages appear in the program. You don't need to read them, this is just the program's way to let you know its actions. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
 
 --- /collapse ---
 
@@ -104,7 +104,7 @@ curl -L http://rpf.io/proj-amaze | sudo bash -s $USER
 
 --- /task ---
 
-The script may take several minutes, or more, to complete the setup, as this process depends on the speed of your computer and your internet connection. While this happens, lots of messages appear in the program. You don't need to worry about reading them — it is the program's way to tell you what it is doing. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
+The script may take several minutes, or more, to complete the setup, as this process depends on the speed of your computer and your internet connection. While this happens, lots of messages appear in the program. You don't need to read them, this is just the program's way to let you know its actions. When the program has completed its work, you should see a new line on which you can enter commands in your terminal. Then you can move on with the rest of the project.
 
 --- /collapse ---
 
