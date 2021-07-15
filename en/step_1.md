@@ -9,7 +9,7 @@ You will use a pre-trained image classification model to build your product. You
  + A command line tool
  + A desktop application, built with guizero
 
-![A desktop application that asks the user to provide an image for identification.](images/initial_application.png)
+![A large question mark with the title, 'Amazing Image Identifier'. To the right of the question mark is the text, 'Please choose an image to identify.' Below the question is a button that says 'Select picture'. ](images/initial_application.png)
 
 ### What you will learn
  + How to connect a machine vision model into a larger Python program
