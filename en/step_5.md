@@ -6,7 +6,7 @@
 ---
 title: Create an app
 ---
-When creating a program with guizero, you must use an App widget to create your app. This widget creates an empty app, with no content or controls.
+When you create a program with guizero, you must use an App widget to create your app. This widget creates an empty app, with no content or controls.
 
 The code below shows how to create this app and make it appear with the `display()` function.
 ```python
