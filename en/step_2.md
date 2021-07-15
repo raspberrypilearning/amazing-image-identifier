@@ -37,7 +37,7 @@ In the CLI, you do not click to open and access files or the directories (folder
 
 The easiest method is to open the folder in File Explorer and click into the navigation bar at the top of the window. The full path for the folder should become visible and you can then copy it.
 
-![The File Explorer navigation bar for a folder, with the path highlighted in blue.](images/windows_path.png)
+![The File Explorer navigation bar for a folder. The path is highlighted in blue.](images/windows_path.png)
 
 --- task ---
 
