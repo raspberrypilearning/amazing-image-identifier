@@ -29,7 +29,7 @@ app.title = "New title"
 ```
 
 #### Change the size of your app
-Just like the title, you can set these properties at creation, or update them afterwards. They are integer values, which means that they refer to the number of pixels in the width and height of the app.
+Just like the title, you can set these properties at the start of your project, or update them afterwards. They are integer values, which means that they refer to the number of pixels in the width and height of the app.
 ```python
 from guizero import App
 app = App(height=300, width=200)
@@ -102,7 +102,7 @@ from guizero import Picture
 my_image = Picture(container, image=image_path)
 ```
 
- + `container` is the widget you want to add the image inside of. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget.
+ + `container` is the widget to use for the image. This can be an App, [Box](https://lawsie.github.io/guizero/box/), or [Window](https://lawsie.github.io/guizero/window/) widget.
  + `image_path` is a string that gives the path to your image.
 
 Below is an example of a simple application that uses the `Picture` widget.
@@ -122,7 +122,7 @@ my_image = Picture(container, image=image_path)
 my_image.image = new_image_path
 ```
 
- + `new_image_path` is a string that gives the path to the image you want to update to.
+ + `new_image_path` is a string that gives the path to the image that you want to use to update the original image.
 
 Below is an example of how you might update an image based on user input.
 
