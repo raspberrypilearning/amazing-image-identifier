@@ -30,7 +30,7 @@ To create an account, fill in the relevant details on the [GitHub site](https://
 title: Create a repository
 ---
 
-Once you have an account, go to the [GitHub site](https://github.com/). Make sure you're signed in and click on the **New repository** button (it appears on the left-hand side).
+Once you have an account, go to the [GitHub site](https://github.com/). Make sure you're signed in and click on the **New repository** button (it is a green button with the word ‘New' next to the image of a book on the left-hand side of the screen).
 
 ![The GitHub **New repository** button.](images/github_new_repo.png)
 
@@ -60,7 +60,7 @@ Then click the **Commit changes** button to save your commit!
 
 
 #### Make changes to your repository
-Once you have made some changes to your project, you might want to update the version of it you're sharing in your repository. To change your repository, all you need to do is upload your files again, as part of a new commit.
+Once you have made some changes to your project, you might want to update the version of it in your repository. To change your repository, you need to upload your files again, as part of a new commit.
 
 --- collapse ---
 ---
