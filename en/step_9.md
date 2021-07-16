@@ -1,6 +1,6 @@
 ## Do something with the classification
 
-Once you have the image and have used your machine vision model to identify it, you need to do something with it. Below are a few suggestions, but don’t just restrict yourself to these ideas — if you can think of something better, build it!
+Once you have the image and have used your machine vision model to identify it, you need to do something with it. Below are a few suggestions, but you can make whatever you want!
 
 ### Output the classification to the user
 
