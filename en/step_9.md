@@ -9,7 +9,7 @@ Once you have the image and have used your machine vision model to identify it, 
 title: Print it out as text
 ---
 
-If you’re building a command line tool, you can print the classification out with the print function. This creates a useful tool that can easily be connected to other command line tools to achieve more complex goals.
+If you have built a command line tool, you can print the classification out with the print function. This creates a useful tool that can easily be connected to other command line tools to achieve more complex goals.
 
 --- /collapse ---
 
