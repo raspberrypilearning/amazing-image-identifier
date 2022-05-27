@@ -9,11 +9,11 @@ copyedit: true
 last_tested: '2020-07-16'
 steps:
 - title: Introduction
-  completion: engaged
 - title: Get the starter files
 - title: Run the program
+  completion: engaged
 - title: Load your model
 - title: Predict an image from your computer
-  completion: internal
 - title: Connect to Wikipedia
+  completion: internal
 - title: What next?
