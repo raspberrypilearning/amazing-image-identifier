@@ -21,6 +21,8 @@ steps:
 - title: Classify your image
 - title: Do something with the classification
 - title: Share
+  completion:
+  - external
 - title: Reflect
   knowledge_quiz:
     path: quiz1
