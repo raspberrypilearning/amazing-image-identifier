@@ -1,221 +1,37 @@
-## Build a web application
-You can use the Flask library to create a Python-powered web application. This library has lots of functions, so we have included helpful tips while you build and run your machine-vision powered application. If you would like to learn more about Flask, check out our ['Build a Python web server with Flask'](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) project or review the [Flask documentation](https://flask.palletsprojects.com/).
+## Classify your image
+You need to load a model to do your image identification. In order to create an application that can identify most things it is shown, a powerful and well-trained model is needed. You could collect and label tens of thousands of images, design a model, and train it like in the 'Teach a computer to read' project, but it would take days of work. It is much faster to use a model that has already been trained to identify a wide variety of things. Luckily, TensorFlow contains several models suited for this purpose, so you can just load one of them. This project uses the VGG16 model as an example.
 
---- collapse ---
----
-title: Create an application
----
 
-First you need to create an application. This only takes a couple of lines of code.
+### Import a model from TensorFlow
+This code imports a model from TensorFlow and stores it in a model variable. It is helpful to create a variable to store the image in the size the model expects at the same time, as you need this information later. For this version of VGG16, that is 224x224 pixels. This means VGG16 expects square images. The code to get a classification below resizes any image it is given to match the model's expectations. If the image wasn't originally square, it will end up a bit squished, which may confuse the model. Similarly, if the image provided is much bigger, or much smaller, than what the model expects, then that may also cause issues. You may want to include guidance or instructions to your users on the types of image to supply. In a more advanced version of your application, you could give them the tools to specifically choose a square section of their image to be classified.
 
 ```python
-from flask import Flask
+import tensorflow as tf
+import numpy as np
 
-app = Flask(__name__)
+model = tf.keras.applications.VGG16()
+IMAGE_SIZE = 224
 ```
 
-Flask applications use **routes** to define the URLs of the pages they create.
+### Get a classification from the model
+To get a classification from the model, you need to use a series of commands that take the path to an image, prepare that image for use by the model, ask the model for a classification, and select the model’s highest-ranked classification from the results. This function takes the path to an image and returns a string that contains the highest-ranked classification of that image.
 
 ```python
-@app.route(my_route)
-def my_page():
-    return page_content
+def identify_image(image_path):
+    # Load the image from the supplied file path
+    # At the same time, resize it to the size the model expects
+    image = tf.keras.preprocessing.image.load_img(image_path, 
+    target_size=(IMAGE_SIZE, IMAGE_SIZE)
+    )
+    # Convert the image to an array of numbers,
+    # and shape that array as the model expects
+    image = tf.keras.preprocessing.image.img_to_array(image)
+    image = np.expand_dims(image, axis=0)
+    # Get the model's classification of the image
+    classifications = model.predict(image, batch_size=1)
+    # Select the single most likely classification 
+    best_classification = tf.keras.applications.imagenet_utils.decode_predictions(classifications, top=1)
+    # Return the string that identifies that classification
+    return best_classification[0][0][1]
 ```
-
- + `my_route` is a string that begins with a forward slash (for example, `/images`) and serves as the end of the URL for your page. The start of the URL is determined by your IP address, or domain name (if you deploy the site on the web). A `/` with no additional text as the route creates the home page for your site.
- + `page_content` is a string of text. It can include HTML, CSS, and JavaScript, as you’ll see below.
-
-Once you’ve added a route to your application, you can add the `run` command to the end of the file to cause Flask to start to serve your website when the program is run.
-
-```python
-app.run(debug=True, host='0.0.0.0')
-```
-
-Here is an example of a simple application that will run and serve a web page.
-```python
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route("/")
-def index():
-    return "Hello world!"
-
-app.run(debug=True, host="0.0.0.0")
-```
-
-Once you run this application, you can access your website. Simply enter `127.0.0.1:5000` into your browser's URL bar.
---- /collapse ---
-
---- collapse ---
----
-title: Serve a web page
----
-The response returned by your page functions can be more than a simple string of text. You can include HTML in the string, but be careful to avoid breaking the quotes around the string with quotes inside the HTML. Use single quotes in your HTML if you have used double quotes in Python or vice versa.
-
-Here is an example of how you could include HTML in one of your route functions.
-```python
-@app.route("/")
-def index():
-    return """
-    <!doctype html>
-    <head>    
-    <title>Image identifier</title>
-    </head>
-    <body>
-    <h1>Amazing image identifier!</h1>
-    <p>This application will identify images and tell you about their contents. Simply upload an image to see how it works.</p>
-    </body>
-    """
-```
-
-#### Include variables in your page
-You can include Python variables in your HTML just as you can in any other string. For example:
-```python
-f"""
-<!doctype html>
-<h1>{article.title}</h1>
-<p>{article.summary}</p>
-"""
-```
---- /collapse ---
-
---- collapse ---
----
-title: Let users upload files
----
-
-In order to use your web app to classify images, users need to be able to upload images to the app. To achieve this, you need an upload form and a function to handle the uploaded content.
-
-#### Create a form
-This is the HTML for a short form that attempts to upload the supplied image through the POST method.
-```html
-<!doctype html>
-   <h1>Upload new File</h1>
-   <form method=post enctype=multipart/form-data>
-     <input type=file name=image_to_classify>
-     <input type=submit value=Upload>
-   </form>
-```
-
-
-#### Handle the upload request and reroute the user
-Once the form is submitted, it attempts to use the same route that created the form to process it. To handle this, the function associated with that route needs to be expanded to handle a POST request, save the image it is sent as part of that request, and reroute the user to a page that does something with the image.
-
-You also need to define an upload folder while you create the upload page. **Make sure that this folder exists, as Flask cannot create it for you.**
-
-```python
-from flask import Flask, request, redirect, url_for
-import os
-
-# Define the upload folder for the app
-app.config["UPLOAD_FOLDER"] = "static/uploads"
-
-@app.route('/', methods=["GET", "POST"])
-def upload_file():
-    # Check if it's a POST request
-    if request.method == "POST":
-        # Get the image file from the request
-        file = request.files["image_to_classify"]
-        # Get the filename of the image
-        filename = file.filename
-        # Save the file into the upload folder so it can be used elsewhere
-        file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-        # Redirect the user to the "uploaded_file" function, 
-        # passing it the filename of the file that was just saved
-        return redirect(url_for("uploaded_file",
-                                filename=filename))
-    # If it's not a POST request
-    else:
-        return """
-            <!doctype html>
-            <h1>Upload new File</h1>
-            <form method=post enctype=multipart/form-data>
-                <input type=file name=image_to_classify>
-                <input type=submit value=Upload>
-            </form>
-            """
-```
-
-#### Display the uploaded image
-You also need to create a route and function that takes the uploaded image and does something with it. In the case of this project, the program needs to classify it and maybe fetch some additional data based on that classification, for example, from Wikipedia. The example below shows you how to display the image, but you can replace or extend that with whatever you do with the classification.
-
-```python
-from flask import Flask, url_for
-import os
-
-app.config["UPLOAD_FOLDER"] = "static/uploads"
-
-@app.route('/uploads/<filename>')
-def uploaded_file(filename):
-    image_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-    image_url = url_for('static', filename=f"uploads/{filename}")
-    return f"""
-    <!doctype html>
-    <img src='{image_url}' />
-    """
-```
---- /collapse ---
-
-
-### Share your web app in a coding club
-
-You can share your Flask web app with other computers on the same WiFi or network. To do this, you need to find your IP address, which you can do from the command line.
-
---- collapse ---
----
-title: What is an IP address?
----
-An IP address is a set of numbers that uniquely identifies your computer on a network and can be used to have one computer talk to another. An IP address is four sets of numbers, broken up by dots, like this: `192.168.86.229`.
-
-The whole internet works based on computers using IP addresses to talk to each other — IP actually stands for Internet Protocol. Domain names like raspberrypi.org are just used to look up the right IP address, although they are a lot easier for people to remember!
-
-The IP address you use for this project is called your **private IP address**, because it only works inside your local network. The entire network usually shares a single IP address for connecting to other computers over the internet.
---- /collapse ---
-
---- collapse ---
----
-title: Find your IP address on Windows
----
-In your command prompt, run this command:
-
-```batch
-ipconfig
-```
-
-You should get a lot of information back, but just find the line that begins with `IPv4 Address` — the number on that line is what you need.
---- /collapse ---
-
---- collapse ---
----
-title: Find your IP address on macOS
----
-In your terminal, run this command:
-
-```bash
-ipconfig getifaddr en1
-```
-
-The response is your IP address.
---- /collapse ---
-
---- collapse ---
----
-title: Find your IP address on Linux (includes Raspberry Pi)
----
-In your terminal, run this command:
-
-```bash
-hostname -I
-```
-
-The response is your IP address.
---- /collapse ---
-
---- collapse ---
----
-title:  Share your app
----
-Once you have your IP address, all other people on your network need to do is open their web browser and type your IP address followed by `:5000` into the address bar. For example, `192.168.86.229:5000` would work for a computer with that IP address.
-
---- /collapse ---
+If you want to understand the function in more detail, look at the ['Testing your computer's vision' project](https://projects.raspberrypi.org/en/projects/testing-your-computers-vision).
