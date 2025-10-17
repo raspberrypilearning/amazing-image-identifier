@@ -1,105 +1,221 @@
-## Build a command line tool
-A command line tool is a program that is intended to run in the command prompt, or terminal, of your computer. It accepts user inputs, does something with them, and produces outputs. In the case of this project, a command line tool could identify an image or take that identification and use it to fetch information from the web, or it could do any other task you like.
-
-### Parsing arguments
-The only specialised piece of code needed to write a command line tool is code to parse those arguments and make them accessible to your program.
-
-To parse arguments, Python uses the `argparse` library, which is built into the language. While there is a lot you can do with this library, this project only addresses a small number of the features that are likely to be of the most use to you. If you want to learn more about the library, you can read [its documentation](https://docs.python.org/3/library/argparse.html).
+## Build a web application
+You can use the Flask library to create a Python-powered web application. This library has lots of functions, so we have included helpful tips while you build and run your machine-vision powered application. If you would like to learn more about Flask, check out our ['Build a Python web server with Flask'](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask) project or review the [Flask documentation](https://flask.palletsprojects.com/).
 
 --- collapse ---
 ---
-title: What are arguments?
+title: Create an application
 ---
 
-Arguments are extra pieces of information that you pass to the program when you run it, like this:
+First you need to create an application. This only takes a couple of lines of code.
+
+```python
+from flask import Flask
+
+app = Flask(__name__)
+```
+
+Flask applications use **routes** to define the URLs of the pages they create.
+
+```python
+@app.route(my_route)
+def my_page():
+    return page_content
+```
+
+ + `my_route` is a string that begins with a forward slash (for example, `/images`) and serves as the end of the URL for your page. The start of the URL is determined by your IP address, or domain name (if you deploy the site on the web). A `/` with no additional text as the route creates the home page for your site.
+ + `page_content` is a string of text. It can include HTML, CSS, and JavaScript, as you’ll see below.
+
+Once you’ve added a route to your application, you can add the `run` command to the end of the file to cause Flask to start to serve your website when the program is run.
+
+```python
+app.run(debug=True, host='0.0.0.0')
+```
+
+Here is an example of a simple application that will run and serve a web page.
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    return "Hello world!"
+
+app.run(debug=True, host="0.0.0.0")
+```
+
+Once you run this application, you can access your website. Simply enter `127.0.0.1:5000` into your browser's URL bar.
+--- /collapse ---
+
+--- collapse ---
+---
+title: Serve a web page
+---
+The response returned by your page functions can be more than a simple string of text. You can include HTML in the string, but be careful to avoid breaking the quotes around the string with quotes inside the HTML. Use single quotes in your HTML if you have used double quotes in Python or vice versa.
+
+Here is an example of how you could include HTML in one of your route functions.
+```python
+@app.route("/")
+def index():
+    return """
+    <!doctype html>
+    <head>    
+    <title>Image identifier</title>
+    </head>
+    <body>
+    <h1>Amazing image identifier!</h1>
+    <p>This application will identify images and tell you about their contents. Simply upload an image to see how it works.</p>
+    </body>
+    """
+```
+
+#### Include variables in your page
+You can include Python variables in your HTML just as you can in any other string. For example:
+```python
+f"""
+<!doctype html>
+<h1>{article.title}</h1>
+<p>{article.summary}</p>
+"""
+```
+--- /collapse ---
+
+--- collapse ---
+---
+title: Let users upload files
+---
+
+In order to use your web app to classify images, users need to be able to upload images to the app. To achieve this, you need an upload form and a function to handle the uploaded content.
+
+#### Create a form
+This is the HTML for a short form that attempts to upload the supplied image through the POST method.
+```html
+<!doctype html>
+   <h1>Upload new File</h1>
+   <form method=post enctype=multipart/form-data>
+     <input type=file name=image_to_classify>
+     <input type=submit value=Upload>
+   </form>
+```
+
+
+#### Handle the upload request and reroute the user
+Once the form is submitted, it attempts to use the same route that created the form to process it. To handle this, the function associated with that route needs to be expanded to handle a POST request, save the image it is sent as part of that request, and reroute the user to a page that does something with the image.
+
+You also need to define an upload folder while you create the upload page. **Make sure that this folder exists, as Flask cannot create it for you.**
+
+```python
+from flask import Flask, request, redirect, url_for
+import os
+
+# Define the upload folder for the app
+app.config["UPLOAD_FOLDER"] = "static/uploads"
+
+@app.route('/', methods=["GET", "POST"])
+def upload_file():
+    # Check if it's a POST request
+    if request.method == "POST":
+        # Get the image file from the request
+        file = request.files["image_to_classify"]
+        # Get the filename of the image
+        filename = file.filename
+        # Save the file into the upload folder so it can be used elsewhere
+        file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+        # Redirect the user to the "uploaded_file" function, 
+        # passing it the filename of the file that was just saved
+        return redirect(url_for("uploaded_file",
+                                filename=filename))
+    # If it's not a POST request
+    else:
+        return """
+            <!doctype html>
+            <h1>Upload new File</h1>
+            <form method=post enctype=multipart/form-data>
+                <input type=file name=image_to_classify>
+                <input type=submit value=Upload>
+            </form>
+            """
+```
+
+#### Display the uploaded image
+You also need to create a route and function that takes the uploaded image and does something with it. In the case of this project, the program needs to classify it and maybe fetch some additional data based on that classification, for example, from Wikipedia. The example below shows you how to display the image, but you can replace or extend that with whatever you do with the classification.
+
+```python
+from flask import Flask, url_for
+import os
+
+app.config["UPLOAD_FOLDER"] = "static/uploads"
+
+@app.route('/uploads/<filename>')
+def uploaded_file(filename):
+    image_path = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    image_url = url_for('static', filename=f"uploads/{filename}")
+    return f"""
+    <!doctype html>
+    <img src='{image_url}' />
+    """
+```
+--- /collapse ---
+
+
+### Share your web app in a coding club
+
+You can share your Flask web app with other computers on the same WiFi or network. To do this, you need to find your IP address, which you can do from the command line.
+
+--- collapse ---
+---
+title: What is an IP address?
+---
+An IP address is a set of numbers that uniquely identifies your computer on a network and can be used to have one computer talk to another. An IP address is four sets of numbers, broken up by dots, like this: `192.168.86.229`.
+
+The whole internet works based on computers using IP addresses to talk to each other — IP actually stands for Internet Protocol. Domain names like raspberrypi.org are just used to look up the right IP address, although they are a lot easier for people to remember!
+
+The IP address you use for this project is called your **private IP address**, because it only works inside your local network. The entire network usually shares a single IP address for connecting to other computers over the internet.
+--- /collapse ---
+
+--- collapse ---
+---
+title: Find your IP address on Windows
+---
+In your command prompt, run this command:
+
+```batch
+ipconfig
+```
+
+You should get a lot of information back, but just find the line that begins with `IPv4 Address` — the number on that line is what you need.
+--- /collapse ---
+
+--- collapse ---
+---
+title: Find your IP address on macOS
+---
+In your terminal, run this command:
 
 ```bash
-python3 my_program.py images/my_image.png -s wikipedia
+ipconfig getifaddr en1
 ```
 
-In this case, the program is passed two arguments:
- + `images/my_image.png` is a positional argument. The program knows what the argument is by where it is positioned in the list of arguments provided.
- + `-s wikipedia` is a flagged argument. Flagged arguments always begin with a minus sign, followed by a text string (often a single letter). This helps the user to identify the argument in use. Then, if necessary, the user can provide additional input to the argument to instruct the program to search, this is where the `s` comes from. In this case, the user instructs the program to search Wikipedia for an entry about the classification result. Flagged arguments are optional by convention.
-
+The response is your IP address.
 --- /collapse ---
 
 --- collapse ---
 ---
-title: Create an argument parser
+title: Find your IP address on Linux (includes Raspberry Pi)
 ---
+In your terminal, run this command:
 
-To parse arguments, you need to import and create an `ArgumentParser`, like this:
-
-```python
-from argparse import ArgumentParser
-
-parser = ArgumentParser()
+```bash
+hostname -I
 ```
+
+The response is your IP address.
 --- /collapse ---
 
 --- collapse ---
 ---
-title: Add arguments to your program
+title:  Share your app
 ---
+Once you have your IP address, all other people on your network need to do is open their web browser and type your IP address followed by `:5000` into the address bar. For example, `192.168.86.229:5000` would work for a computer with that IP address.
 
-Once it is created, you need to add each argument used by your program to the parser.
-```python
-parser.add_argument(argument_name,
-                    help=argument_help,
-                    type=value_type)
-```
- + `argument_name` is a string that gives the name of the argument. This string also decides whether the argument is positional, or flagged, by whether it begins with a minus. For example, `image_path` would be positional, while `-search` would be flagged.
- + `argument_help` is a string that describes what the argument does and the types of values it expects.
- + `value_type` is a Python data type. The parser treats arguments as strings by default. So, if you want to take in a string, you do not need to include a type parameter. If you want to take in values of other types, you need to specify the expected type here. There are a lot of options, but the ones you might need are:
-    + `pathlib.Path` — the path to a file
-    + `int` — an integer
-    + `float` — a floating-point number (a number with a decimal point)
-
-Below is an example of how you might create a parser and add some suitable arguments to it.
-
-```python
-from argparse import ArgumentParser
-
-parser = ArgumentParser()
-parser.add_argument("image",
-                    help="The image you want identified",
-                    type=pathlib.Path)
-parser.add_argument("-s",
-                    help="Where to lookup image details")
-```
---- /collapse ---
-
---- collapse ---
----
-title: Get arguments from the parser
----
-Once you have added all the arguments you need, you should read them and use them elsewhere in your program.
-
-First, you need to parse the arguments into a variable. You can work on this with the code below:
-
-```python
-args = parser.parse_args()
-```
-+ `parser` is an argument parser created by you
-
-Once completed, your variable contains an object that has properties that match each of the argument names set by you. You can access these properties through the dot operator. For example, you would access a property called `image` like this:
-
-```python
-image = args.image
-```
-
-Below is an example of how you can create an argument and fetch its value into a variable.
-
-```python
-from argparse import ArgumentParser
-
-parser = ArgumentParser()
-parser.add_argument("image",
-                    help="The image you want identified",
-                    type=pathlib.Path)
-
-args = parser.parse_args()
-
-image = args.image
-```
 --- /collapse ---
